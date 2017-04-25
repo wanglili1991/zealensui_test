@@ -17,6 +17,7 @@ import com.zealens.face.domain.module.Score;
 import com.zealens.face.domain.module.Video;
 import com.zealens.face.util.ApiFromAndroid;
 import com.zealens.face.util.CollectionUtil;
+import com.zealens.face.util.LogcatUtil;
 
 import org.jetbrains.annotations.NonNls;
 
@@ -26,8 +27,6 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
-
-import static com.zealens.face.util.LogcatUtil.sop;
 
 /**
  * Created on 2017/3/25
@@ -101,6 +100,8 @@ public class UmpireManager extends BaseCoreManager implements UmpireOperator, Bo
     private List<List<Video>> m20HitsVideos;
     private List<List<Video>> mGeneralVideos;
     private boolean[] mVideoArranged;
+    private final boolean PRINT = false;
+    private boolean mAutoReverseDisabled;
 
     public UmpireManager(IPCameraPresenter[] cameras) {
         mIPCameras = cameras;
@@ -351,8 +352,10 @@ public class UmpireManager extends BaseCoreManager implements UmpireOperator, Bo
         if (mUmpireCallback != null) {
             mUmpireCallback.onScoreChange(mScore);
         }
-        int gameSum = mScore.game[Rule.Team.TAN] + mScore.game[Rule.Team.RED];
-        if ((gameSum & 0x1) != 0) mReverseSide = !mReverseSide;
+        if (!mAutoReverseDisabled) {
+            int gameSum = CollectionUtil.accumulateIntegerArray(mScore.game);
+            if ((gameSum & 0x1) != 0) mReverseSide = !mReverseSide;
+        }
         if (parseCallbackTag == Rule.ScoreCallbackTag.NEXT_BOUT) {
             shouldStartNextBout();
         } else if (parseCallbackTag == Rule.ScoreCallbackTag.NEXT_GAME) {
@@ -640,23 +643,26 @@ public class UmpireManager extends BaseCoreManager implements UmpireOperator, Bo
         // keep statement order
         long lastingTime = System.currentTimeMillis() - Long.parseLong(mRecordingTimeStamp);
         UmpireDelegate.putEventIntoCache(mRecordingMatchEventMap, Rule.Event.LASTING_TIME, lastingTime);
-        stopRecordAndAppendEndScoreToFileName(mRecordingVideoPath[Rule.Side.A], mReverseSide ? tagRed : tagTan
-                , lastingTime, Rule.Side.A, mReverseSide ? Rule.Team.RED : Rule.Team.TAN);
-        stopRecordAndAppendEndScoreToFileName(mRecordingVideoPath[Rule.Side.B], mReverseSide ? tagTan : tagRed
-                , lastingTime, Rule.Side.B, mReverseSide ? Rule.Team.TAN : Rule.Team.RED);
+        stopRecordAndAppendEndScoreToFileName(mRecordingVideoPath[Rule.Side.A]
+                , mReverseSide ? tagRed : tagTan, lastingTime, mRecordingMatchEventMap, Rule.Side.A
+                , mReverseSide ? Rule.Team.RED : Rule.Team.TAN);
+        stopRecordAndAppendEndScoreToFileName(mRecordingVideoPath[Rule.Side.B]
+                , mReverseSide ? tagTan : tagRed, lastingTime, mRecordingMatchEventMap, Rule.Side.B
+                , mReverseSide ? Rule.Team.TAN : Rule.Team.RED);
 
         mRecordingTimeStamp = "";
         mRecordingVideoPath[Rule.Side.A] = "";
         mRecordingVideoPath[Rule.Side.B] = "";
         mNoteFileProcessed = false;
+        mRecordingMatchEventMap.clear();
     }
 
     private void stopRecordAndAppendEndScoreToFileName(String path, @Rule.VideoTag int tag
-            , long lastingTime, @Rule.Side int side, @Rule.Team int team) {
+            , long lastingTime, Map<String, String> map, @Rule.Side int side, @Rule.Team int team) {
         if (mVideoRecordStartOk[side]) {
             mIPCameras[side].stopRecord();
             sop(TAG, mScore, path);
-            videoFileAndNoteFileProcess(tag, mScore, lastingTime, path, mRecordingMatchEventMap, side, team);
+            videoFileAndNoteFileProcess(tag, mScore, lastingTime, path, map, side, team);
         }
     }
 
@@ -697,5 +703,14 @@ public class UmpireManager extends BaseCoreManager implements UmpireOperator, Bo
         mBoxScores = null;
         mScore = null;
         mTennisPresenter = null;
+    }
+
+    private void sop(Object... objects) {
+        if (PRINT)
+            LogcatUtil.sop(objects);
+    }
+
+    public void disableAutoReverseSide() {
+        mAutoReverseDisabled = true;
     }
 }

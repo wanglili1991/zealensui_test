@@ -29,8 +29,8 @@ import static org.mockito.Mockito.spy;
  * in BlaBla by Kyle
  */
 
-public class UmpireTest {/*
-    UmpireManager mUmpireManagerSpy;
+public class UmpireTest {
+    UmpireManager mUmpireManager;
     TennisBoutPresenterStub mTennisBoutSpy;
     private boolean[] TEAM_TAN_WIN_ARR = new boolean[]{false, false, true, true, true, true};
     private boolean[] TEAM_RED_WIN_ARR = new boolean[]{true, true, false, false, false, false};
@@ -44,30 +44,30 @@ public class UmpireTest {/*
         IPCameraPresenterStub mIPCameraPresenter = spy(stub);
         IPCameraPresenterStub mIPCameraPresenterB = spy(stubB);
         IPCameraPresenterStub[] ipCameras = new IPCameraPresenterStub[]{mIPCameraPresenter, mIPCameraPresenterB};
-        UmpireManager umpireManager = new UmpireManager(ipCameras);
-        umpireManager.assignComponent(mTennisBoutSpy, new TennisBase.InitParam());
-        mUmpireManagerSpy = spy(umpireManager);
+        mUmpireManager = new UmpireManager(ipCameras);
+        mUmpireManager.initialize();
+        mUmpireManager.assignComponent(mTennisBoutSpy, new TennisBase.InitParam());
+        mUmpireManager.disableAutoReverseSide();
         setupUmpireSpy();
     }
 
     public void setupUmpireSpy() {
-        mUmpireManagerSpy.setMatchMode(Rule.MatchMode.TIE_BREAK_T6);
-        mUmpireManagerSpy.assignUmpireCallback(new FakeUmpireCallback());
-        mUmpireManagerSpy.initialize();
+        mUmpireManager.setMatchMode(Rule.MatchMode.TIE_BREAK_T6);
+        mUmpireManager.assignUmpireCallback(new FakeUmpireCallback());
         sop("init spy");
     }
 
     @Test
     public void scoreInString() throws Exception {
         boutScore();
-        String scoreStr = mUmpireManagerSpy.getScore().getScoreInString();
+        String scoreStr = mUmpireManager.getScore().getScoreInString();
         sop(scoreStr);
         assertTrue(scoreStr.contains(DomainConst.SCORE_TAG_BOUT));
     }
 
     @Test
     public void boutScore() {
-        int[][] total = mUmpireManagerSpy.getScore().total;
+        int[][] total = mUmpireManager.getScore().total;
         mTennisBoutSpy.appendBout(true);
         assertEquals(concatABScore(total, Rule.ScoreType.BOUT), "1:0");
         mTennisBoutSpy.appendBout(new boolean[]{true, true, false, false, false, true});
@@ -91,7 +91,7 @@ public class UmpireTest {/*
 
     @Test
     public void gameScoreModeTieBreak6() {
-        int[][] total = mUmpireManagerSpy.getScore().total;
+        int[][] total = mUmpireManager.getScore().total;
         testTie(6);
         assertEquals(concatABScore(total, Rule.ScoreType.GAME), String.valueOf(6) + ":" + String.valueOf(6));
         letWinGameSeveralTimes(mTennisBoutSpy);
@@ -104,9 +104,9 @@ public class UmpireTest {/*
 
     @Test
     public void gameScoreModeTieBreak4() {
-        mUmpireManagerSpy.reset();
-        int[][] total = mUmpireManagerSpy.getScore().total;
-        mUmpireManagerSpy.setMatchMode(Rule.MatchMode.TTE_BREAK_T4);
+        mUmpireManager.reset();
+        int[][] total = mUmpireManager.getScore().total;
+        mUmpireManager.setMatchMode(Rule.MatchMode.TTE_BREAK_T4);
         testTie(4);
         assertEquals(concatABScore(total, Rule.ScoreType.GAME), String.valueOf(4) + ":" + String.valueOf(4));
         letWinGameSeveralTimes(mTennisBoutSpy);
@@ -118,9 +118,9 @@ public class UmpireTest {/*
     public void reverseLastScore() throws Exception {
         clearDir();
         wonTimes();
-        assertEquals(getFileList(UmpireDelegate.ExtensionType.NOTE).size(), 6);
+        assertEquals(getFileList(UmpireDelegate.ExtensionType.NOTE).size(), 5);
         sop(getScoreString() + " before reverse");
-        mUmpireManagerSpy.reverseLastScoreJudge();
+        mUmpireManager.reverseLastScoreJudge();
         sop(getScoreString() + " after reverse");
     }
 
@@ -128,17 +128,16 @@ public class UmpireTest {/*
     public void cancelLastScore() throws Exception {
         clearDir();
         wonTimes();
-        assertEquals(getFileList(UmpireDelegate.ExtensionType.NOTE).size(), 6);
+        assertEquals(getFileList(UmpireDelegate.ExtensionType.NOTE).size(), 5);
         sop(getScoreString() + " before cancel");
-        mUmpireManagerSpy.cancelLastScore();
+        mUmpireManager.cancelLastScore();
         sop(getScoreString() + " after cancel");
 
-        assertEquals(getFileList(UmpireDelegate.ExtensionType.NOTE_AND_VIDEO).size(), 15);
-        assertEquals(getFileList(UmpireDelegate.ExtensionType.NOTE).size(), 5);
+        assertEquals(getFileList(UmpireDelegate.ExtensionType.NOTE_AND_VIDEO).size(), 14);
+        assertEquals(getFileList(UmpireDelegate.ExtensionType.NOTE).size(), 4);
     }
 
-    @Test
-    public void wonTimes() throws Exception {
+    private void wonTimes() throws Exception {
         mTennisBoutSpy.appendBout(false);
         sopScore();
         mTennisBoutSpy.appendBout(false);
@@ -158,7 +157,7 @@ public class UmpireTest {/*
     }
 
     private String getScoreString() {
-        Score score = mUmpireManagerSpy.getScore();
+        Score score = mUmpireManager.getScore();
         return (score.getScoreInString());
     }
 
@@ -173,8 +172,7 @@ public class UmpireTest {/*
         }
     }
 
-    @Test
-    public void clearDir() {
+    private void clearDir() {
         List<File> files = getFileList(UmpireDelegate.ExtensionType.NOTE_AND_VIDEO);
         for (File file : files) {
             file.delete();
@@ -188,9 +186,9 @@ public class UmpireTest {/*
 
     @Test
     public void gameScoreModeTieBreak() {
-        mUmpireManagerSpy.reset();
-        int[][] total = mUmpireManagerSpy.getScore().total;
-        mUmpireManagerSpy.setMatchMode(Rule.MatchMode.TIE_BREAK);
+        mUmpireManager.reset();
+        int[][] total = mUmpireManager.getScore().total;
+        mUmpireManager.setMatchMode(Rule.MatchMode.TIE_BREAK);
         letWinGameSeveralTimes(mTennisBoutSpy);
         assertEquals(concatABScore(total, Rule.ScoreType.GAME), "0:0");
         assertEquals(concatABScore(total, Rule.ScoreType.SET), "1:0");
@@ -230,12 +228,12 @@ public class UmpireTest {/*
     @Test
     public void boxScore() throws Exception {
         letWinGameSeveralTimes(mTennisBoutSpy);
-        TennisBase.MatchBoxScore scoreTan = mUmpireManagerSpy.getBoxScores()[Rule.Team.TAN];
-        TennisBase.MatchBoxScore scoreRed = mUmpireManagerSpy.getBoxScores()[Rule.Team.RED];
+        TennisBase.MatchBoxScore scoreTan = mUmpireManager.getBoxScores()[Rule.Team.TAN];
+        TennisBase.MatchBoxScore scoreRed = mUmpireManager.getBoxScores()[Rule.Team.RED];
         assertEquals(scoreTan.speedMax, TennisBoutPresenterStub.MAX_SPEED);
         assertEquals(scoreTan.ace, getTrueCount(TEAM_TAN_WIN_ARR));
         assertEquals(scoreRed.ace, getTrueCount(TEAM_RED_WIN_ARR));
-        mUmpireManagerSpy.exchangeSide();
+        mUmpireManager.exchangeSide();
         letWinGameSeveralTimes(mTennisBoutSpy);
         assertEquals(scoreTan.ace, TEAM_TAN_WIN_ARR.length);
         assertEquals(scoreRed.ace, TEAM_RED_WIN_ARR.length);
@@ -254,8 +252,8 @@ public class UmpireTest {/*
         int count = 10000;
         mTennisBoutSpy.appendReceivePoints(count);
 
-        assertEquals(CollectionUtil.usedCellCount(mUmpireManagerSpy.getReceiveHits()[Rule.Team.TAN]), count);
-        assertEquals(CollectionUtil.usedCellCount(mUmpireManagerSpy.getServeFallPoints()[Rule.Team.TAN]), count);
+        assertEquals(CollectionUtil.usedCellCount(mUmpireManager.getReceiveHits()[Rule.Team.TAN]), count);
+        assertEquals(CollectionUtil.usedCellCount(mUmpireManager.getServeFallPoints()[Rule.Team.TAN]), count);
     }
 
     @Test
@@ -269,29 +267,29 @@ public class UmpireTest {/*
     @Test
     public void exchangeSide() throws Exception {
         mTennisBoutSpy.appendBout(false);
-        assertEquals(mUmpireManagerSpy.getScore().bout[Rule.Side.A], 0);
-        assertEquals(mUmpireManagerSpy.getScore().bout[Rule.Side.B], 1);
-        mUmpireManagerSpy.exchangeSide();
+        assertEquals(mUmpireManager.getScore().bout[Rule.Side.A], 0);
+        assertEquals(mUmpireManager.getScore().bout[Rule.Side.B], 1);
+        mUmpireManager.exchangeSide();
         mTennisBoutSpy.appendBout(true);
-        assertEquals(mUmpireManagerSpy.getScore().bout[Rule.Side.A], 0);
-        assertEquals(mUmpireManagerSpy.getScore().bout[Rule.Side.B], 2);
-        mUmpireManagerSpy.exchangeSide();
+        assertEquals(mUmpireManager.getScore().bout[Rule.Side.A], 0);
+        assertEquals(mUmpireManager.getScore().bout[Rule.Side.B], 2);
+        mUmpireManager.exchangeSide();
         mTennisBoutSpy.appendBout(false);
-        assertEquals(mUmpireManagerSpy.getScore().bout[Rule.Side.A], 0);
-        assertEquals(mUmpireManagerSpy.getScore().bout[Rule.Side.B], 3);
-        mUmpireManagerSpy.exchangeSide();
+        assertEquals(mUmpireManager.getScore().bout[Rule.Side.A], 0);
+        assertEquals(mUmpireManager.getScore().bout[Rule.Side.B], 3);
+        mUmpireManager.exchangeSide();
         mTennisBoutSpy.appendBout(true);
-        assertEquals(mUmpireManagerSpy.getScore().bout[Rule.Side.A], 0);
-        assertEquals(mUmpireManagerSpy.getScore().bout[Rule.Side.B], 0);
-        assertEquals(mUmpireManagerSpy.getScore().game[Rule.Side.A], 0);
-        assertEquals(mUmpireManagerSpy.getScore().game[Rule.Side.B], 1);
+        assertEquals(mUmpireManager.getScore().bout[Rule.Side.A], 0);
+        assertEquals(mUmpireManager.getScore().bout[Rule.Side.B], 0);
+        assertEquals(mUmpireManager.getScore().game[Rule.Side.A], 0);
+        assertEquals(mUmpireManager.getScore().game[Rule.Side.B], 1);
     }
 
     @Test
     public void lastingTime() throws Exception {
         long time = System.currentTimeMillis();
-        mUmpireManagerSpy.start();
-        mUmpireManagerSpy.stop();
+        mUmpireManager.start();
+        mUmpireManager.stop();
         new Thread(() -> {
             try {
                 Thread.sleep(100);
@@ -299,7 +297,7 @@ public class UmpireTest {/*
                 e.printStackTrace();
             }
         }).run();
-        assumeTrue(mUmpireManagerSpy.getLastingTime() > 100);
-        assertTrue(time - mUmpireManagerSpy.getWholeGameStartTime() <= 0);
-    }*/
+        assumeTrue(mUmpireManager.getLastingTime() > 100);
+        assertTrue(time - mUmpireManager.getWholeGameStartTime() <= 0);
+    }
 }

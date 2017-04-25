@@ -16,7 +16,7 @@ public class IPCameraPresenterStub implements IPCameraPresenter {
 
     @Override
     public boolean init(String tmpPath, String ip, short port, String userName, String password) {
-        return false;
+        return true;
     }
 
     @Override
