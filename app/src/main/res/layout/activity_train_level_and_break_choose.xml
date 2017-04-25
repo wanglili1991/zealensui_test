@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/drawableGeneralBackground"
+    tools:context="com.zealens.face.activity.train.TrainLevelAndBreakChooseActivity">
+
+    <View
+        android:id="@+id/center_dock"
+        style="@style/CenterDot"
+        />
+
+    <View
+        android:id="@+id/base_line"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/train_mode_level_choose_side_sign_bottom_margin"/>
+
+    <View
+        android:id="@+id/side_sign_a"
+        android:layout_width="@dimen/playground_side_sign_size"
+        android:layout_height="@dimen/playground_side_sign_size"
+        android:layout_above="@+id/base_line"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="@dimen/train_mode_level_choose_side_sign_edge_margin"
+        android:background="@drawable/playground_side_a"/>
+
+    <View
+        android:id="@+id/side_sign_b"
+        android:layout_width="@dimen/playground_side_sign_size"
+        android:layout_height="@dimen/playground_side_sign_size"
+        android:layout_above="@+id/base_line"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="@dimen/train_mode_level_choose_side_sign_edge_margin"
+        android:background="@drawable/playground_side_b"/>
+
+    <com.zealens.face.view.PortraitView
+        android:id="@+id/player_side_a_one"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/side_sign_a"
+        android:layout_marginBottom="@dimen/train_mode_level_choose_portrait_bottom_margin"
+        android:layout_marginEnd="@dimen/train_mode_level_choose_portrait_edge_margin"
+        android:layout_toStartOf="@+id/center_dock"
+        app:description_direction="left"/>
+
+    <com.zealens.face.view.PortraitView
+        android:id="@+id/player_side_b_one"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/side_sign_a"
+        android:layout_marginBottom="@dimen/train_mode_level_choose_portrait_bottom_margin"
+        android:layout_marginStart="@dimen/train_mode_level_choose_portrait_edge_margin"
+        android:layout_toEndOf="@+id/center_dock"
+        app:description_direction="right"/>
+
+    <RadioGroup
+        android:id="@+id/level_radio_group"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dp200"
+        android:layout_above="@+id/playground_view"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal"
+        android:weightSum="3"
+        tools:visibility="invisible">
+
+        <RadioButton
+            android:id="@+id/level_easy"
+            style="@style/BaseText.Format"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|top|start|center_horizontal"
+            android:layout_marginBottom="@dimen/dp40"
+            android:layout_marginStart="@dimen/train_mode_choose_panel_item_margin"
+            android:layout_marginTop="@dimen/dp20"
+            android:layout_weight="1"
+            android:background="@drawable/button_effect_blue_white_with_shadow"
+            android:button="@null"
+            android:checked="false"
+            android:clickable="true"
+            android:gravity="top|center_horizontal"
+            android:padding="@dimen/dp36"
+
+            android:text="@string/easy"
+            android:textColor="@drawable/btn_text_color_white_blue_selector"
+            android:textSize="@dimen/control_button_text_size"
+            android:textStyle="bold"
+            />
+
+        <RadioButton
+            android:id="@+id/level_middle"
+            style="@style/BaseText.Format"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dp40"
+            android:layout_marginStart="@dimen/train_mode_choose_panel_item_margin"
+            android:layout_marginTop="@dimen/dp20"
+            android:layout_weight="1"
+            android:background="@drawable/button_effect_blue_white_with_shadow"
+            android:button="@null"
+            android:checked="false"
+            android:clickable="true"
+            android:gravity="top|center_horizontal"
+            android:padding="@dimen/dp36"
+            android:text="@string/middle"
+            android:textColor="@drawable/btn_text_color_white_blue_selector"
+            android:textSize="@dimen/control_button_text_size"
+            android:textStyle="bold"
+            />
+
+        <RadioButton
+            android:id="@+id/level_hard"
+            style="@style/BaseText.Format"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dp40"
+            android:layout_marginStart="@dimen/train_mode_choose_panel_item_margin"
+            android:layout_marginTop="@dimen/dp20"
+            android:layout_weight="1"
+            android:background="@drawable/button_effect_blue_white_with_shadow"
+            android:button="@null"
+            android:checked="false"
+            android:clickable="true"
+            android:gravity="top|center_horizontal"
+            android:padding="@dimen/dp36"
+            android:paddingBottom="@dimen/dp10"
+            android:text="@string/hard"
+            android:textColor="@drawable/btn_text_color_white_blue_selector"
+            android:textSize="@dimen/control_button_text_size"
+            android:textStyle="bold"
+            />
+
+    </RadioGroup>
+
+    <com.zealens.face.view.GroundView
+        android:id="@+id/playground_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/dp100"
+        />
+
+    <RadioGroup
+        android:id="@+id/break_mode_chooser"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/train_mode_break_mode_portrait_size"
+        android:layout_above="@+id/base_line"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal"
+        android:visibility="invisible"
+        android:weightSum="3"
+        tools:visibility="visible">
+
+        <com.zealens.face.view.ResourcefulRadioButton
+            android:id="@+id/four_minute"
+            style="@style/BaseText.Format.NoPadding.Size30"
+            android:layout_width="@dimen/train_mode_break_mode_portrait_size"
+            android:layout_height="@dimen/train_mode_break_mode_portrait_size"
+            android:layout_weight="1"
+            android:background="@drawable/button_effect_break_mode_bg_selector"
+            android:button="@null"
+            android:gravity="bottom|center_horizontal"
+            android:padding="@dimen/dp20"
+            android:text="@string/break_mode_four_minutes"
+            android:textStyle="bold"
+            app:background_pic_resource="@drawable/break_mode_btn_4m"
+            />
+
+        <com.zealens.face.view.ResourcefulRadioButton
+            android:id="@+id/hits"
+            style="@style/BaseText.Format.NoPadding.Size30"
+            android:layout_width="@dimen/train_mode_break_mode_portrait_size"
+            android:layout_height="@dimen/train_mode_break_mode_portrait_size"
+            android:layout_marginStart="@dimen/train_mode_break_mode_chooser_margin"
+            android:layout_weight="1"
+            android:background="@drawable/button_effect_break_mode_bg_selector"
+            android:button="@null"
+            android:gravity="bottom|center_horizontal"
+            android:padding="@dimen/dp20"
+            android:text="@string/break_mode_20_hits"
+            android:textStyle="bold"
+            app:background_pic_resource="@drawable/break_mode_btn_20hits"
+            />
+
+        <com.zealens.face.view.ResourcefulRadioButton
+            android:id="@+id/free_style"
+            style="@style/BaseText.Format.NoPadding.Size30"
+            android:layout_width="@dimen/train_mode_break_mode_portrait_size"
+            android:layout_height="@dimen/train_mode_break_mode_portrait_size"
+            android:layout_marginStart="@dimen/train_mode_break_mode_chooser_margin"
+            android:layout_weight="1"
+            android:background="@drawable/button_effect_break_mode_bg_selector"
+            android:button="@null"
+            android:gravity="bottom|center_horizontal"
+            android:padding="@dimen/dp20"
+            android:text="@string/break_mode_free_style"
+            android:textStyle="bold"
+            app:background_pic_resource="@drawable/break_mode_btn_free_style"
+            />
+
+    </RadioGroup>
+
+</RelativeLayout>

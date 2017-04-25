@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/match_score_board_bg"
+    android:orientation="vertical"
+    >
+
+    <FrameLayout
+        android:id="@+id/center_board_parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp190"
+        >
+
+        <ImageView
+            android:id="@+id/bg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@drawable/match_score_board_general_bg"
+            />
+
+        <com.zealens.face.view.PlayerStateImageView
+            android:id="@+id/player_state_side_a"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start|center_vertical"
+            android:layout_marginStart="@dimen/dp90"
+            android:scaleX="-1"
+            />
+
+        <com.zealens.face.view.PlayerStateImageView
+            android:id="@+id/player_state_side_b"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|center_vertical"
+            android:layout_marginEnd="@dimen/dp90"
+            android:src="@drawable/match_score_board_out"
+            />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@drawable/match_score_board_bg_middle"
+            />
+
+        <com.zealens.face.view.FontTextView
+            android:id="@+id/last_score_incorrect"
+            style="@style/BaseText.Format.NoPadding.Size30"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|bottom"
+            android:layout_marginBottom="@dimen/dp50"
+            android:background="@drawable/button_effect_gray"
+            android:text="@string/last_score_incorrect"/>
+
+        <RelativeLayout
+            android:id="@+id/player_container"
+            android:layout_width="@dimen/dp260"
+            android:layout_height="@dimen/dp100"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/dp30">
+
+            <com.zealens.face.view.FontTextView
+                style="@style/BaseText.Format.NoPadding.Size30"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                tools:text="player 1"
+                />
+
+            <com.zealens.face.view.FontTextView
+                style="@style/BaseText.Format.NoPadding.Size30"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:textStyle="bold"
+                tools:text="player 2"
+                />
+
+            <com.zealens.face.view.FontTextView
+                style="@style/BaseText.Format.NoPadding.Size30"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:textStyle="bold"
+                tools:text="player 3"
+                />
+
+            <com.zealens.face.view.FontTextView
+                style="@style/BaseText.Format.NoPadding.Size30"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentEnd="true"
+                android:textStyle="bold"
+                tools:text="player 4"
+                />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="@dimen/dp300"
+            android:layout_height="@dimen/dp300"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/dp150"
+            android:padding="@dimen/dp70">
+
+            <com.zealens.face.view.FontTextView
+                android:id="@+id/set_score_side_a"
+                style="@style/BaseText.Format.NoPadding.Size30"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/zero"
+                android:textColor="@color/colorC6FF00"
+                android:textSize="@dimen/sp28"
+                android:textStyle="bold"
+                tools:text="20"
+                />
+
+            <com.zealens.face.view.FontTextView
+                android:id="@+id/set_score_side_b"
+                style="@style/BaseText.Format.NoPadding.Size30"
+                android:layout_width="wrap_content"
+                android:text="@string/zero"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:textColor="@color/colorC6FF00"
+                android:textSize="@dimen/sp28"
+                android:textStyle="bold"
+                tools:text="20"
+                />
+
+            <com.zealens.face.view.FontTextView
+                android:id="@+id/game_score_side_a"
+                style="@style/BaseText.Format.NoPadding.Size30"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:background="@drawable/match_score_board_game_bg"
+                android:padding="@dimen/dp3"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/sp40"
+                android:textStyle="bold"
+                android:text="@string/zero"
+                tools:text="20"
+                />
+
+            <com.zealens.face.view.FontTextView
+                android:id="@+id/game_score_side_b"
+                style="@style/BaseText.Format.NoPadding.Size30"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentEnd="true"
+                android:background="@drawable/match_score_board_game_bg"
+                android:padding="@dimen/dp3"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/sp40"
+                android:text="@string/zero"
+                android:textStyle="bold"
+                tools:text="20"
+                />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical">
+
+            <View
+                android:id="@id/center_dock"
+                style="@style/CenterDot"/>
+
+            <com.zealens.face.view.FontTextView
+                android:id="@+id/bout_score_side_a"
+                style="@style/BaseText.Format.NoPadding.Size30"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/dp300"
+                android:layout_toStartOf="@+id/center_dock"
+                android:textSize="460sp"
+                android:textStyle="bold"
+                android:text="@string/zero"
+                app:font_type="helvetica"
+                tools:text="15"/>
+
+            <com.zealens.face.view.FontTextView
+                android:id="@+id/bout_score_side_b"
+                style="@style/BaseText.Format.NoPadding.Size30"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp300"
+                android:layout_toEndOf="@+id/center_dock"
+                android:text="@string/zero"
+                android:textSize="460sp"
+                android:textStyle="bold"
+                app:font_type="helvetica"
+                tools:text="45"/>
+
+        </RelativeLayout>
+
+    </FrameLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/center_board_parent">
+
+        <com.zealens.face.view.FontTextView
+            android:id="@+id/speed_side_a"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginBottom="@dimen/dp30"
+            android:layout_marginEnd="@dimen/dp30"
+            android:layout_marginStart="@dimen/dp130"
+            android:gravity="bottom"
+            android:textColor="@color/colorA6FE33"
+            android:textSize="270sp"
+            android:visibility="invisible"
+            app:font_type="unidream_led"
+            tools:text="156"
+            tools:visibility="visible" />
+
+        <com.zealens.face.view.FontTextView
+            android:id="@+id/speed_unit_side_a"
+            style="@style/BaseText.Format.NoPadding"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="@dimen/dp70"
+            android:layout_marginEnd="@dimen/dp130"
+            android:layout_toEndOf="@id/speed_side_a"
+            android:gravity="bottom"
+            android:text="@string/km_h"
+            android:textColor="@color/colorA6FE33"
+            android:textSize="40sp"
+            android:visibility="invisible"
+            app:font_type="unidream_led"
+            tools:visibility="visible" />
+
+        <View
+            android:id="@id/center_dock"
+            style="@style/CenterDot"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="@dimen/dp116"
+            android:layout_toStartOf="@id/center_dock"
+            android:orientation="vertical"
+            >
+
+            <com.zealens.face.view.PortraitView
+                android:id="@+id/player_side_a_one"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dp10"
+                app:description_direction="left"/>
+
+            <com.zealens.face.view.PortraitView
+                android:id="@+id/player_side_a_two"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:description_direction="left"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/dp116"
+            android:layout_toEndOf="@id/center_dock"
+            android:orientation="vertical"
+            >
+
+            <com.zealens.face.view.PortraitView
+                android:id="@+id/player_side_b_one"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dp10"
+                app:description_direction="right"/>
+
+            <com.zealens.face.view.PortraitView
+                android:id="@+id/player_side_b_two"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:description_direction="right"/>
+        </LinearLayout>
+
+        <com.zealens.face.view.FontTextView
+            android:id="@+id/speed_side_b"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="@dimen/dp30"
+            android:layout_marginEnd="@dimen/dp30"
+            android:layout_toStartOf="@+id/speed_unit_side_b"
+            android:gravity="bottom"
+            android:textColor="@color/colorA6FE33"
+            android:textSize="270sp"
+            android:visibility="invisible"
+            tools:text="156"
+            tools:visibility="visible"
+            app:font_type="unidream_led"/>
+
+        <com.zealens.face.view.FontTextView
+            android:id="@+id/speed_unit_side_b"
+            style="@style/BaseText.Format.NoPadding"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginBottom="@dimen/dp70"
+            android:layout_marginEnd="@dimen/dp130"
+            android:gravity="bottom"
+            android:text="@string/km_h"
+            android:visibility="invisible"
+            tools:visibility="visible"
+            android:textColor="@color/colorA6FE33"
+            android:textSize="40sp"
+            app:font_type="unidream_led"/>
+    </RelativeLayout>
+
+</RelativeLayout>

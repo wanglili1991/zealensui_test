@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zealens.face.view.FontTextView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/description"
+    style="@style/BaseText.Format.NoPadding"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="top|center_horizontal"
+    android:textSize="84sp"
+    android:textStyle="bold"/>

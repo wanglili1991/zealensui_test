@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--add the parent for the bg shadow effect taking string space-->
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_alignParentBottom="true"
+    android:clickable="true"
+    android:layout_toEndOf="@+id/center_dock"
+    android:background="@color/colorPausedCover">
+
+    <ImageView
+        android:id="@+id/control_unit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:padding="@dimen/dp15"
+        android:src="@drawable/video_player_btn_play_big"
+        />
+
+</FrameLayout>

@@ -1,0 +1,9 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@color/colorTransparent"/>
+    <item
+        android:bottom="@dimen/indicator_padding"
+        android:drawable="@drawable/dot_selector"
+        android:left="@dimen/indicator_padding"
+        android:right="@dimen/indicator_padding"
+        android:top="@dimen/indicator_padding"/>
+</layer-list>

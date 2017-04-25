@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/home_bg"
+    tools:context="com.zealens.face.activity.HomeActivity">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/head_account_layer_height"
+        android:layout_centerHorizontal="true">
+
+        <ImageView
+            android:layout_width="@dimen/dp50"
+            android:layout_height="@dimen/dp50"
+            android:layout_gravity="center_vertical"
+            android:padding="@dimen/dp10"
+            android:src="@drawable/tennis"
+            />
+
+        <com.zealens.face.view.FontTextView
+            style="@style/BaseText.Format.NoPadding"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="@string/tennisEn"
+            android:textAllCaps="true"
+            android:textSize="@dimen/sp40"
+            app:font_type="bank"
+            />
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="horizontal"
+            android:weightSum="100"
+            >
+
+            <com.zealens.face.view.CornerDispatchView
+                android:id="@+id/single_match"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="@integer/home_page_bottom_layer_button_weight"
+                android:background="@drawable/button_effect_home_single"
+                android:clickable="true"
+                app:corner_ignore="left">
+
+                <LinearLayout
+                    style="@style/Disabled"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end|center_vertical"
+                    android:layout_marginEnd="@dimen/dp300"
+                    android:orientation="vertical"
+                    >
+
+                    <com.zealens.face.view.FontTextView
+                        style="@style/BaseText.NoPadding.CenterButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:clickable="false"
+                        android:enabled="false"
+                        android:text="@string/single"/>
+
+                    <com.zealens.face.view.FontTextView
+                        android:id="@+id/single_match_en"
+                        style="@style/BaseText.NoPadding.CenterButton.En"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp32"
+                        android:clickable="false"
+                        android:enabled="false"
+                        android:text="@string/singleEn"
+                        />
+                </LinearLayout>
+            </com.zealens.face.view.CornerDispatchView>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp1"
+                android:layout_weight="@integer/home_page_bottom_layer_gap_weight"
+                />
+
+            <com.zealens.face.view.CornerDispatchView
+                android:id="@+id/train"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="@integer/home_page_bottom_layer_button_weight"
+                android:background="@drawable/button_effect_home_training"
+                android:clickable="true"
+                app:corner_ignore="right"
+                >
+
+                <LinearLayout
+                    style="@style/Disabled"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end|center_vertical"
+                    android:layout_marginEnd="@dimen/dp270"
+                    android:orientation="vertical">
+
+                    <com.zealens.face.view.FontTextView
+                        style="@style/BaseText.NoPadding.CenterButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="@integer/home_page_bottom_layer_button_weight"
+                        android:clickable="false"
+                        android:enabled="false"
+                        android:text="@string/train"
+                        />
+
+                    <com.zealens.face.view.FontTextView
+                        style="@style/BaseText.NoPadding.CenterButton.En"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp32"
+                        android:clickable="false"
+                        android:enabled="false"
+                        android:text="@string/trainEn"
+                        />
+                </LinearLayout>
+            </com.zealens.face.view.CornerDispatchView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="horizontal"
+            android:weightSum="100"
+            >
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp1"
+                android:layout_weight="@integer/home_page_top_layer_gap_weight"
+                />
+
+            <com.zealens.face.view.CornerDispatchView
+                android:id="@+id/double_match"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="@integer/home_page_top_layer_button_weight"
+                android:background="@drawable/button_effect_home_doubles"
+                android:clickable="true"
+                app:corner_ignore="both"
+                >
+
+                <LinearLayout
+                    style="@style/Disabled"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end|center_vertical"
+                    android:layout_marginEnd="@dimen/dp260"
+                    android:orientation="vertical">
+
+                    <com.zealens.face.view.FontTextView
+                        style="@style/BaseText.NoPadding.CenterButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:clickable="false"
+                        android:enabled="false"
+                        android:text="@string/doubleText"
+                        />
+
+                    <com.zealens.face.view.FontTextView
+                        style="@style/BaseText.NoPadding.CenterButton.En"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp32"
+                        android:clickable="false"
+                        android:enabled="false"
+                        android:text="@string/doubleTextEn"
+                        />
+                </LinearLayout>
+            </com.zealens.face.view.CornerDispatchView>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp1"
+                android:layout_weight="@integer/home_page_top_layer_gap_weight"
+                />
+
+        </LinearLayout>
+    </FrameLayout>
+</RelativeLayout>

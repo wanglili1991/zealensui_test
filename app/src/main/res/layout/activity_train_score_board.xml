@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_general"
+    tools:context="com.zealens.face.activity.train.TrainScoreBoardActivity">
+
+    <View
+        android:id="@+id/center_dock"
+        style="@style/CenterDot"/>
+
+    <LinearLayout
+        android:id="@+id/score_board"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/player_information_card"
+        android:layout_marginBottom="@dimen/dp130"
+        android:layout_marginEnd="@dimen/dp60"
+        android:layout_marginStart="@dimen/dp60"
+        android:layout_marginTop="@dimen/dp260"
+        android:orientation="horizontal"
+        >
+
+        <com.zealens.face.view.ScoreBoardView
+            android:id="@+id/score_board_a"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/dp60"
+            android:layout_weight="1"
+            app:mode="without_portrait"/>
+
+        <com.zealens.face.view.ScoreBoardView
+            android:id="@+id/score_board_b"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp60"
+            android:layout_weight="1"
+            app:mode="without_portrait"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/player_information_card"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/train_score_board_user_information_margin_bottom"
+        android:orientation="horizontal"
+        >
+
+        <RelativeLayout
+            android:id="@+id/player_information_side_a"
+            android:layout_width="800dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/dp350"
+            android:layout_marginStart="@dimen/dp200"
+            >
+
+            <View
+                android:id="@+id/side_sign_a"
+                android:layout_width="@dimen/playground_side_sign_size"
+                android:layout_height="@dimen/playground_side_sign_size"
+                android:layout_marginTop="@dimen/dp20"
+                android:background="@drawable/playground_side_a"/>
+
+            <com.zealens.face.view.PortraitView
+                android:id="@+id/player_side_a_one"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                app:description_direction="left"/>
+
+            <View
+                android:id="@+id/divider_line_a"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp1"
+                android:layout_below="@id/side_sign_a"
+                android:layout_marginTop="@dimen/dp80"
+                android:background="@color/colorPrimary"/>
+
+            <com.zealens.face.view.FontTextView
+                android:id="@+id/average_speed_sign_a"
+                style="@style/BaseText.Format.NoPadding.Size30"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/divider_line_a"
+                android:layout_marginTop="@dimen/dp30"
+                android:text="@string/average_speed"
+                />
+
+            <com.zealens.face.view.FontTextView
+                style="@style/BaseText.Format.NoPadding.Size30"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/average_speed_sign_a"
+                android:layout_marginTop="@dimen/dp30"
+                android:text="@string/success_rate"
+                />
+
+            <com.zealens.face.view.FontTextView
+                android:id="@+id/average_speed_a"
+                style="@style/BaseText.Format.NoPadding.Size30"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_below="@+id/divider_line_a"
+                android:layout_marginTop="@dimen/dp30"
+                tools:text="160km/h"
+                />
+
+            <com.zealens.face.view.FontTextView
+                android:id="@+id/success_ratio_side_a"
+                style="@style/BaseText.Format.NoPadding.Size30"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_below="@+id/average_speed_a"
+                android:layout_marginTop="@dimen/dp30"
+                tools:text="60 %"
+                />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/player_information_side_b"
+            android:layout_width="800dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/dp350"
+            android:layout_marginStart="@dimen/dp200"
+            >
+
+            <View
+                android:id="@+id/side_sign_b"
+                android:layout_width="@dimen/playground_side_sign_size"
+                android:layout_height="@dimen/playground_side_sign_size"
+                android:layout_alignParentEnd="true"
+
+                android:layout_marginTop="@dimen/dp20"
+                android:background="@drawable/playground_side_b"/>
+
+            <com.zealens.face.view.PortraitView
+                android:id="@+id/player_side_b_one"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:description_direction="right"/>
+
+            <View
+                android:id="@+id/divider_line_b"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp1"
+                android:layout_below="@id/side_sign_b"
+                android:layout_marginTop="@dimen/dp80"
+                android:background="@color/colorPrimary"/>
+
+            <com.zealens.face.view.FontTextView
+                android:id="@+id/average_speed_sign_b"
+                style="@style/BaseText.Format.NoPadding.Size30"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/divider_line_b"
+                android:layout_marginTop="@dimen/dp30"
+                android:text="@string/average_speed"
+                />
+
+            <com.zealens.face.view.FontTextView
+                style="@style/BaseText.Format.NoPadding.Size30"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/average_speed_sign_b"
+                android:layout_marginTop="@dimen/dp30"
+                android:text="@string/success_rate"
+                />
+
+            <com.zealens.face.view.FontTextView
+                android:id="@+id/average_speed_b"
+                style="@style/BaseText.Format.NoPadding.Size30"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_below="@+id/divider_line_b"
+                android:layout_marginTop="@dimen/dp30"
+                tools:text="160km/h"
+                />
+
+            <com.zealens.face.view.FontTextView
+                android:id="@+id/success_ratio_side_b"
+                style="@style/BaseText.Format.NoPadding.Size30"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_below="@+id/average_speed_b"
+                android:layout_marginTop="@dimen/dp30"
+                tools:text="60 %"
+                />
+        </RelativeLayout>
+    </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/zone_playground"
+    android:id="@+id/parent"
+    >
+
+    <ImageView
+        android:id="@+id/zone_side_a_backyard_bottom_half_red"
+        style="@style/ZonePicture"
+        android:layout_marginStart="@dimen/tmpe_side_a_bottom_margin_start"
+        android:layout_marginTop="@dimen/tmpe_side_a_bottom_margin_top"
+        android:src="@drawable/zone_backyard_bottom_half_red"
+        />
+
+    <ImageView
+        android:id="@+id/zone_side_a_backyard_bottom_yellow"
+        style="@style/ZonePicture"
+        android:layout_marginStart="@dimen/tmpe_side_a_bottom_margin_start"
+        android:layout_marginTop="@dimen/tmpe_side_a_bottom_margin_top"
+        android:src="@drawable/zone_backyard_bottom_yellow"
+        />
+
+    <ImageView
+        android:id="@+id/zone_side_a_whole_blue"
+        style="@style/ZonePicture"
+        android:layout_marginStart="@dimen/tmpe_side_a_bottom_margin_start"
+        android:layout_marginTop="@dimen/tmpe_side_a_top_margin_top"
+        android:src="@drawable/zone_whole_blue"
+        />
+
+    <ImageView
+        android:id="@+id/zone_side_a_backyard_half_red"
+        style="@style/ZonePicture"
+        android:layout_marginStart="@dimen/tmpe_side_a_bottom_margin_start"
+        android:layout_marginTop="@dimen/tmpe_side_a_top_margin_top"
+        android:src="@drawable/zone_backyard_half_red"
+        />
+
+    <ImageView
+        android:id="@+id/zone_side_a_backyard_yellow"
+        style="@style/ZonePicture"
+        android:layout_marginStart="@dimen/tmpe_side_a_bottom_margin_start"
+        android:layout_marginTop="@dimen/tmpe_side_a_top_margin_top"
+        android:src="@drawable/zone_backyard_yellow"
+        />
+
+    <ImageView
+        android:id="@+id/zone_side_a_service_area_bottom_inner"
+        style="@style/ZonePicture"
+        android:layout_marginStart="550dp"
+        android:layout_marginTop="@dimen/dp110"
+        android:scaleX="-1"
+        android:src="@drawable/zone_service_area_bottom_inner"
+        />
+
+    <ImageView
+        android:id="@+id/zone_side_a_service_area_bottom_blue"
+        style="@style/ZonePicture"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="490dp"
+        android:scaleX="-1"
+        android:layout_marginTop="@dimen/tmpe_side_a_bottom_margin_top"
+        android:src="@drawable/zone_service_area_bottom"
+        />
+
+    <ImageView
+        android:id="@+id/zone_side_a_service_area_bottom_outer_red"
+        style="@style/ZonePicture"
+        android:layout_marginStart="490dp"
+        android:scaleX="-1"
+        android:layout_marginTop="150dp"
+        android:src="@drawable/zone_service_area_bottom_outer"
+        />
+
+    <!--bounds of side a/b-->
+
+    <ImageView
+        android:id="@+id/zone_side_b_whole_top"
+        style="@style/ZonePicture"
+        android:layout_marginStart="930dp"
+        android:layout_marginTop="@dimen/tmpe_side_a_top_margin_top"
+        android:src="@drawable/zone_side_b_whole_top"
+        />
+
+    <ImageView
+        android:id="@+id/zone_side_b_backyard_top_half_yellow"
+        style="@style/ZonePicture"
+        android:layout_marginStart="1280dp"
+        android:layout_marginTop="@dimen/tmpe_side_a_top_margin_top"
+        android:src="@drawable/zone_side_b_backyard_top_half_yellow"
+        />
+
+    <ImageView
+        android:id="@+id/zone_side_b_backyard_top"
+        style="@style/ZonePicture"
+        android:layout_marginStart="1180dp"
+        android:layout_marginTop="@dimen/tmpe_side_a_top_margin_top"
+        android:src="@drawable/zone_side_b_backyard_top"
+        />
+
+    <ImageView
+        android:id="@+id/zone_side_b_whole"
+        style="@style/ZonePicture"
+        android:layout_marginStart="930dp"
+        android:layout_marginTop="@dimen/tmpe_side_a_top_margin_top"
+        android:src="@drawable/zone_side_b_whole"
+        />
+
+    <ImageView
+        android:id="@+id/zone_side_b_backyard_bottom_half_blue"
+        style="@style/ZonePicture"
+        android:layout_marginStart="1365dp"
+        android:layout_marginTop="110dp"
+        android:src="@drawable/zone_side_b_bottom_backyard_half_blue"
+        />
+
+    <ImageView
+        android:id="@+id/zone_side_b_backyard_bottom_half_red"
+        style="@style/ZonePicture"
+        android:layout_marginStart="1358dp"
+        android:layout_marginTop="100dp"
+        android:scaleX="-1"
+        android:src="@drawable/zone_backyard_bottom_half_red"
+        android:tint="@android:color/holo_blue_bright"
+        />
+
+    <ImageView
+        android:id="@+id/zone_side_b_whole_bottom"
+        style="@style/ZonePicture"
+        android:layout_marginStart="930dp"
+        android:layout_marginTop="110dp"
+        android:src="@drawable/zone_whole_bottom"
+        />
+
+    <ImageView
+        android:id="@+id/zone_side_b_backyard_bottom"
+        style="@style/ZonePicture"
+        android:layout_marginStart="1245dp"
+        android:layout_marginTop="108dp"
+        android:src="@drawable/zone_backyard_bottom"
+        />
+
+    <ImageView
+        android:id="@+id/zone_side_b_backyard"
+        style="@style/ZonePicture"
+        android:layout_marginStart="1180dp"
+        android:layout_marginTop="@dimen/tmpe_side_a_top_margin_top"
+        android:src="@drawable/zone_backyard"
+        />
+
+    <ImageView
+        android:id="@+id/zone_side_b_backyard_half"
+        style="@style/ZonePicture"
+        android:layout_marginStart="1280dp"
+        android:layout_marginTop="@dimen/tmpe_side_a_top_margin_top"
+        android:src="@drawable/zone_backyard_half"
+        />
+
+    <ImageView
+        android:id="@+id/zone_side_b_service_area_top"
+        style="@style/ZonePicture"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="930dp"
+        android:layout_marginTop="@dimen/dp28"
+        android:src="@drawable/zone_side_b_service_no_limit_right"
+        tools:visibility="visible"
+        />
+
+    <ImageView
+        android:id="@+id/zone_side_b_service_area_top_outer"
+        style="@style/ZonePicture"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="930dp"
+        android:layout_marginTop="@dimen/dp28"
+        android:src="@drawable/zone_service_area_top_outer"
+        />
+
+    <ImageView
+        android:id="@+id/zone_side_b_service_area_top_inner"
+        style="@style/ZonePicture"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="930dp"
+        android:layout_marginTop="@dimen/dp68"
+        android:src="@drawable/zone_service_area_top_inner"
+        />
+
+    <ImageView
+        android:id="@+id/zone_side_b_service_area_bottom"
+        style="@style/ZonePicture"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="930dp"
+        android:layout_marginTop="@dimen/tmpe_side_a_bottom_margin_top"
+        android:src="@drawable/zone_service_area_bottom"
+        />
+
+    <ImageView
+        android:id="@+id/zone_side_b_service_area_bottom_inner"
+        style="@style/ZonePicture"
+        android:layout_marginStart="930dp"
+        android:layout_marginTop="110dp"
+        android:src="@drawable/zone_service_area_bottom_inner"
+        />
+
+    <ImageView
+        android:id="@+id/zone_side_b_service_area_bottom_outer"
+        style="@style/ZonePicture"
+        android:layout_marginStart="930dp"
+        android:layout_marginTop="150dp"
+        android:src="@drawable/zone_service_area_bottom_outer"
+        />
+
+    <!--player-->
+    <ImageView
+        android:id="@+id/zone_player_backyard_half_yellow"
+        style="@style/ZonePicture"
+        android:layout_marginStart="487dp"
+        android:layout_marginTop="@dimen/dp1"
+        android:src="@drawable/zone_player_yellow"
+        />
+    <ImageView
+        android:id="@+id/zone_player_backyard_half_blue"
+        style="@style/ZonePicture"
+        android:layout_marginStart="487dp"
+        android:layout_marginTop="@dimen/dp1"
+        android:src="@drawable/zone_player_blue"
+        />
+
+    <ImageView
+        android:id="@+id/zone_player_backyard_half_yellow_bottom"
+        style="@style/ZonePicture"
+        android:layout_marginStart="390dp"
+        android:layout_marginTop="@dimen/dp80"
+        android:src="@drawable/zone_player_yellow"
+        />
+
+    <ImageView
+        android:id="@+id/zone_player_backyard_half_blue_bottom"
+        style="@style/ZonePicture"
+        android:layout_marginStart="390dp"
+        android:layout_marginTop="@dimen/dp80"
+        android:src="@drawable/zone_player_blue"
+        />
+    <ImageView
+        android:id="@+id/zone_player_blue_bottom_line"
+        style="@style/ZonePicture"
+        android:layout_marginStart="267dp"
+        android:layout_marginTop="@dimen/dp80"
+        android:src="@drawable/zone_player_blue"
+        />
+
+    <ImageView
+        android:id="@+id/zone_player_yellow_bottom_line"
+        style="@style/ZonePicture"
+        android:layout_marginStart="390dp"
+        android:layout_marginTop="@dimen/dp1"
+        android:src="@drawable/zone_player_yellow"
+        />
+</FrameLayout>

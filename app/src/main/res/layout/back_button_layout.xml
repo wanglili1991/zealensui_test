@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--add the parent for the bg shadow effect taking string space-->
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:layout_toEndOf="@+id/center_dock"
+    android:background="@drawable/button_effect_blue_with_shadow">
+
+    <com.zealens.face.view.FontTextView
+        android:id="@+id/back"
+        style="@style/BaseText.Format.Disabled"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="@dimen/dp40"
+        android:layout_marginTop="@dimen/dp30"
+        android:text="@string/go_back"
+        android:textSize="@dimen/control_button_text_size"/>
+</FrameLayout>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--value-->
+    <integer name="home_page_bottom_layer_button_weight">37</integer>
+    <integer name="home_page_bottom_layer_gap_weight">26</integer>
+    <integer name="home_page_top_layer_button_weight">38</integer>
+    <integer name="home_page_top_layer_gap_weight">31</integer>
+
+    <!--string-->
+
+    <!--colors-->
+
+    <!--dimen-->
+    <dimen name="center_button_text_size">@dimen/sp25</dimen>
+</resources>

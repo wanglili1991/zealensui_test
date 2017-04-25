@@ -1,0 +1,20 @@
+apply plugin: 'java'
+apply plugin: 'me.tatarka.retrolambda'
+
+dependencies {
+    def moduleDependencies = rootProject.ext.commonDependencies
+    def moduleTestDependencies = rootProject.ext.commonTestDependencies
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+
+    compile moduleDependencies.okHttp
+    compile moduleDependencies.gson
+    compile moduleDependencies.jUnit
+    compile moduleDependencies.intellijAnnotations
+    compile moduleDependencies.commonIO
+    testCompile moduleTestDependencies.okHttpTest
+    testCompile moduleTestDependencies.jUnit
+    testCompile moduleTestDependencies.mockito
+}
+
+sourceCompatibility = JavaVersion.VERSION_1_8
+targetCompatibility = JavaVersion.VERSION_1_8

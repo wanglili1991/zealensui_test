@@ -1,0 +1,129 @@
+<resources>
+
+    <string name="app_name">Zealens</string>
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="once_more">Once more</string>
+    <string name="video_replay">Video Replay</string>
+    <string name="analyze">Analyze</string>
+    <string name="analyze_glance">Analyze Glance</string>
+    <string name="start">Start</string>
+    <string name="exit">Exit</string>
+    <string name="log_out">Log out</string>
+    <string name="log_in">Log in</string>
+    <string name="single">Single match</string>
+    <string name="doubleText">Double</string>
+    <string name="train">Train</string>
+    <string name="easy">Easy</string>
+    <string name="middle">Middle</string>
+    <string name="hard">Hard</string>
+    <string name="end_game">End Game</string>
+    <string name="go_back">Back</string>
+    <string name="slower">Slower</string>
+    <string name="normal">Normal</string>
+    <string name="percent_char" translatable="false">%</string>
+    <string name="space_char" translatable="false"> </string>
+    <string name="full_screen">Full Screen</string>
+    <string name="singleEn" translatable="false">Single  match</string>
+    <string name="doubleTextEn" translatable="false">Double  match</string>
+    <string name="trainEn" translatable="false">Special  training</string>
+    <string name="tennisEn" translatable="false">Tennis</string>
+    <string name="we_chat_login">WeChat login</string>
+    <string name="close">Close</string>
+    <string name="confirm_to_log_out_all_accounts">Confirm to log out all accounts?</string>
+    <string name="no">No</string>
+    <string name="continue_choose">Continue</string>
+    <string name="break_mode_four_minutes">Four minutes</string>
+    <string name="break_mode_20_hits">20 hits</string>
+    <string name="break_mode_free_style">Free style</string>
+    <string name="succeed_times">Success Times</string>
+    <string name="speed_unit" translatable="false">km/h</string>
+    <string name="average_speed">Average speed</string>
+    <string name="success_rate">Success Rate</string>
+    <string name="last_score_incorrect">Last Score Incorrect</string>
+    <string name="last_score_incorrect_with_quote">Last Score Incorrect ?</string>
+    <string name="training">Training</string>
+    <string name="matching">Matching</string>
+    <string name="qrcode_scan_hint">Scan QRCode \n Get video recode</string>
+    <string name="zero" translatable="false">0</string>
+    <string name="player">Plyaer</string>
+    <string name="aces">Aces</string>
+    <string name="first_serve">1st Serve</string>
+    <string name="second_serve">2nd Serve</string>
+    <string name="analyze_title">Analyze</string>
+    <string name="blank" translatable="false"> </string>
+
+    <string-array name="GameMode">
+        <item name="tiebreak">Tie break</item>
+        <item name="sixTiebreak">Tie break in six</item>
+        <item name="fourTiebreak">Tie break in four</item>
+    </string-array>
+
+    <string-array name="TrainModeChoose">
+        <item name="service">Service</item>
+        <item name="alternateService">AlternateService</item>
+        <item name="forehand">Forehand</item>
+        <item name="forehandDownTheLine">ForehandDownTheLine</item>
+        <item name="forehandCrossCourt">ForehandCrossCourt</item>
+        <item name="backhand">Backhand</item>
+        <item name="backhandDownTheLine">BackhandDownTheLine</item>
+        <item name="backhandCrossCourt">BackhandCrossCourt</item>
+        <item name="volley">Volley</item>
+        <item name="freeStyle">FreeStyle</item>
+        <item name="multipleBalls">MultipleBalls</item>
+    </string-array>
+
+    <string-array name="AnalyzeIndicators">
+        <item name="aces">@string/aces</item>
+        <item name="double_faults">Double Faults</item>
+        <item name="first_server_in">First Server In</item>
+        <item name="first_server_won">First Server Won</item>
+        <item name="second_server_won">Second Server Won</item>
+        <item name="break_point_won">Break Point Won</item>
+        <item name="net_points_won">Net Points Won</item>
+        <item name="winner">Winner</item>
+    </string-array>
+
+    <string-array name="AnalyzeIndicatorsTraining">
+        <item name="success_times">Success Times</item>
+        <item name="total_times">Total Times</item>
+        <item name="success_ratio">Success Ratio</item>
+        <item name="max_speed">Max Speed</item>
+        <item name="average_speed">Average Speed</item>
+    </string-array>
+
+    <string name="end_matching">End Match</string>
+    <string name="end_training">End Train</string>
+
+    <string name="continue_matching">Continue Match</string>
+    <string name="continue_train">Continue Train</string>
+    <string name="end_matching_confirm_hint">Match is not over, sure to exit?</string>
+    <string name="end_train_confirm_hint">Train is not over, sure to exit?</string>
+    <string name="replay_video">Replay Video</string>
+    <string name="replay_side_a">Replay Side A</string>
+    <string name="replay_side_b">Replay Side B</string>
+    <string name="correct_score">Score Again</string>
+    <string name="competitor_won_the_score">Competitor won</string>
+    <string name="km_h" translatable="false">km/h</string>
+    <string name="network_down_hint">Network Error, contact staff</string>
+    <string name="already_login">Already login</string>
+    <string name="special_video_divider_text">Genius record</string>
+    <string name="training_video">Training Video</string>
+    <string name="training_video_inspect_a">Training Video A</string>
+    <string name="training_video_inspect_b">Training Video B</string>
+    <string name="match_video_name">Score of %d</string>
+    <string name="match_video_name_game">Game of %d</string>
+    <string name="special_video_title_ace">Ace</string>
+    <string name="special_video_title_winner">Winner</string>
+    <string name="special_video_title_20_hits">Above 20 Hits</string>
+
+    <string-array name="TrainModeLevel">
+        <item name="easy">@string/easy</item>
+        <item name="middle">@string/middle</item>
+        <item name="hard">@string/hard</item>
+    </string-array>
+    <string-array name="TrainModeLevelForService">
+        <item name="easy">Unlimited</item>
+        <item name="middle">Inner</item>
+        <item name="hard">Outer</item>
+    </string-array>
+</resources>

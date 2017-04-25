@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_general"
+    tools:context="com.zealens.face.activity.common.AnalyzeGlanceActivity">
+
+    <View
+        android:id="@+id/center_dock"
+        style="@style/CenterDot"
+        />
+
+    <View
+        android:id="@+id/base_line"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginTop="@dimen/dp200"/>
+
+    <RelativeLayout
+        android:id="@+id/score_and_players"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/base_line">
+
+        <LinearLayout
+            android:id="@+id/score_container"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:orientation="vertical"
+            >
+
+            <com.zealens.face.view.FontTextView
+                style="@style/BaseText.Format.NoPadding"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/dp160"
+                tools:text="6-3"
+                />
+
+            <com.zealens.face.view.FontTextView
+                style="@style/BaseText.Format.NoPadding.Size30"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center"
+                android:textSize="@dimen/sp35"
+                android:textStyle="bold"
+                tools:text="4-3 3-4 6-4 6-3"
+                />
+        </LinearLayout>
+
+        <com.zealens.face.view.PortraitView
+            android:id="@+id/player_side_a_one"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="@dimen/player_portrait_margin_score"
+            android:layout_toStartOf="@+id/score_container"/>
+
+        <com.zealens.face.view.PortraitView
+            android:id="@+id/player_side_a_two"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="@dimen/player_portraits_gap"
+            android:layout_toStartOf="@+id/player_side_a_one"/>
+
+        <com.zealens.face.view.PortraitView
+            android:id="@+id/player_side_b_one"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/player_portrait_margin_score"
+            android:layout_toEndOf="@+id/score_container"/>
+
+        <com.zealens.face.view.PortraitView
+            android:id="@+id/player_side_b_two"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/player_portraits_gap"
+            android:layout_toEndOf="@+id/player_side_b_one"/>
+    </RelativeLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/analyze_recycler_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/score_and_players"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/dp30"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/qrcode_hint"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="@dimen/dp45"
+        android:layout_marginEnd="@dimen/dp110"
+        android:orientation="vertical"
+        >
+
+        <FrameLayout
+            android:id="@+id/analyze"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_effect_blue_4_analyze">
+
+            <com.zealens.face.view.FontTextView
+                style="@style/BaseText.Format.Disabled"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="@dimen/dp40"
+                android:layout_marginStart="@dimen/dp20"
+                android:layout_marginTop="@dimen/dp30"
+                android:text="@string/analyze"
+                android:textSize="@dimen/control_button_text_size"/>
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/video_replay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_effect_blue_4_video_replay">
+
+            <com.zealens.face.view.FontTextView
+                style="@style/BaseText.Format.Disabled"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="@dimen/dp40"
+                android:layout_marginStart="@dimen/dp20"
+                android:layout_marginTop="@dimen/dp30"
+                android:text="@string/video_replay"
+                android:textSize="@dimen/control_button_text_size"/>
+
+        </FrameLayout>
+    </LinearLayout>
+
+    <com.zealens.face.view.FontTextView
+        android:id="@+id/qrcode_hint"
+        style="@style/BaseText.Format.NoPadding.Size30"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="@dimen/dp62"
+        android:layout_marginEnd="@dimen/dp155"
+        android:drawablePadding="@dimen/dp25"
+        android:drawableTop="@drawable/qrcode"
+        android:lineSpacingExtra="@dimen/dp10"
+        android:text="@string/qrcode_scan_hint"/>
+
+    <FrameLayout
+        android:id="@+id/last_score_incorrect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/dp25"
+        android:layout_marginEnd="@dimen/dp15"
+        android:layout_toStartOf="@+id/center_dock"
+        android:background="@drawable/button_effect_blue_with_shadow">
+
+        <com.zealens.face.view.FontTextView
+            style="@style/BaseText.Format.Disabled"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="@dimen/dp40"
+            android:layout_marginTop="@dimen/dp30"
+            android:text="@string/last_score_incorrect"
+            android:textSize="@dimen/control_button_text_size"/>
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/once_more"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/dp25"
+        android:layout_marginStart="@dimen/dp15"
+        android:layout_toEndOf="@+id/center_dock"
+        android:background="@drawable/button_effect_green_with_shadow">
+
+        <com.zealens.face.view.FontTextView
+            android:id="@+id/once_more_text"
+            style="@style/BaseText.Format.Disabled"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="@dimen/dp40"
+            android:layout_marginTop="@dimen/dp30"
+            android:text="@string/once_more"
+            android:textSize="@dimen/control_button_text_size"/>
+    </FrameLayout>
+
+</RelativeLayout>
+

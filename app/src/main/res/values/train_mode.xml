@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--value-->
+    <integer name="mode_choose_panel_span_count">4</integer>
+    <integer name="mode_choose_panel_item_text_lines">1</integer>
+    <integer name="mode_choose_total_count">11</integer>
+
+    <!--color-->
+    <color name="colorTrainButtonSelected">@color/color457AE4</color>
+
+    <!--dimen-->
+    <dimen name="train_mode_button_text_size">@dimen/sp20</dimen>
+    <dimen name="playground_side_sign_size">@dimen/dp80</dimen>
+    <dimen name="playground_side_sign_margin_center">@dimen/dp560</dimen>
+    <dimen name="train_mode_choose_panel_bottom_margin">@dimen/dp40</dimen>
+    <dimen name="train_mode_choose_panel_gap_margin">@dimen/dp170</dimen>
+    <dimen name="train_mode_choose_panel_bound_margin">@dimen/dp180</dimen>
+    <dimen name="train_mode_choose_panel_item_size">@dimen/dp200</dimen>
+    <dimen name="train_mode_choose_panel_item_margin">@dimen/dp20</dimen>
+    <dimen name="train_mode_level_choose_side_sign_bottom_margin">@dimen/dp460</dimen>
+    <dimen name="train_mode_level_choose_side_sign_edge_margin">@dimen/dp220</dimen>
+    <dimen name="train_mode_level_choose_portrait_bottom_margin">@dimen/dp80</dimen>
+    <dimen name="train_mode_level_choose_portrait_edge_margin">@dimen/dp900</dimen>
+    <dimen name="train_mode_break_mode_portrait_size">@dimen/dp330</dimen>
+    <dimen name="train_mode_break_mode_portrait_edge_margin">@dimen/dp5</dimen>
+    <dimen name="train_mode_break_mode_chooser_margin">@dimen/dp62</dimen>
+    <!--train_mode_playground_element-->
+    <dimen name="tmpe_side_a_bottom_margin_start">@dimen/dp180</dimen>
+    <dimen name="tmpe_side_a_bottom_margin_top">@dimen/dp100</dimen>
+    <dimen name="tmpe_side_a_top_margin_start">@dimen/tmpe_side_a_bottom_margin_start</dimen>
+    <dimen name="tmpe_side_a_top_margin_top">@dimen/dp35</dimen>
+    <dimen name="tmpe_side_b_bottom_margin_start">@dimen/dp180</dimen>
+    <dimen name="tmpe_side_b_bottom_margin_top">@dimen/tmpe_side_a_bottom_margin_top</dimen>
+    <dimen name="tmpe_side_b_top_margin_start">@dimen/tmpe_side_b_bottom_margin_top</dimen>
+    <dimen name="tmpe_side_b_top_margin_top">@dimen/tmpe_side_a_top_margin_top</dimen>
+    <dimen name="tmpe_center_line_margin_start_edge">@dimen/dp930</dimen>
+    <dimen name="tmpe_side_b_backyard_half_margin_start_edge">@dimen/dp1280</dimen>
+    <dimen name="tmpe_side_a_margin_start_edge">@dimen/dp367</dimen>
+    <dimen name="train_score_board_user_information_margin_bottom">@dimen/dp280</dimen>
+    <dimen name="train_score_board_user_information_margin_bottom_when_single">@dimen/dp100</dimen>
+
+</resources>

@@ -1,0 +1,11 @@
+apply plugin: 'java'
+apply plugin: 'me.tatarka.retrolambda'
+
+dependencies {
+    def moduleDependencies = rootProject.ext.dataDependencies
+    def moduleTestDependencies = rootProject.ext.dataTestDependencies
+
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile project(':common')
+    testCompile moduleTestDependencies.mockito
+}

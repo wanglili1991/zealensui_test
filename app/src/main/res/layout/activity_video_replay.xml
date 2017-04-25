@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_general"
+    tools:context="com.zealens.face.activity.common.VideoReplayActivity">
+
+    <com.zealens.face.view.FontTextView
+        android:id="@+id/title"
+        style="@style/BaseText.Format.NoPadding.Size30"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp50"
+        android:text="@string/matching"
+        />
+
+    <com.zealens.face.view.FontTextView
+        android:id="@+id/information"
+        style="@style/BaseText.Format.NoPadding.Size30"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="@dimen/dp50"
+        android:text="@string/player"
+        />
+
+    <View
+        android:id="@id/center_dock"
+        style="@style/CenterDot"
+        />
+
+    <View
+        android:id="@+id/base_line"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginTop="@dimen/dp130"/>
+
+    <RelativeLayout
+        android:id="@+id/content_panel"
+        android:layout_width="@dimen/video_panel_container_width"
+        android:layout_height="match_parent"
+        android:layout_below="@id/base_line"
+        android:layout_marginBottom="@dimen/dp230"
+        android:layout_marginStart="@dimen/dp68"
+        android:layout_marginTop="@dimen/dp30"
+        android:background="@color/color031E4C">
+
+        <RadioGroup
+            android:id="@+id/player_radio_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/dp40"
+            android:layout_marginStart="@dimen/dp40"
+            android:layout_marginTop="@dimen/dp30"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/player_one"
+                style="@style/BaseText.Format"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|top|start|center_horizontal"
+                android:layout_weight="1"
+                android:background="@drawable/button_effect_edge_white_left_corner"
+                android:button="@null"
+                android:checked="true"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="top|center_horizontal"
+                android:padding="@dimen/dp36"
+                android:text="@string/player"
+                android:textColor="@drawable/btn_text_color_white_blue_selector"
+                android:textSize="@dimen/control_button_text_size"
+                android:textStyle="bold"
+                />
+
+            <RadioButton
+                android:id="@+id/player_two"
+                style="@style/BaseText.Format"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/button_effect_edge_white_right_corner"
+                android:button="@null"
+                android:checked="false"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="top|center_horizontal"
+                android:padding="@dimen/dp36"
+                android:paddingBottom="@dimen/dp10"
+                android:text="@string/player"
+                android:textColor="@drawable/btn_text_color_white_blue_selector"
+                android:textSize="@dimen/control_button_text_size"
+                android:textStyle="bold"
+                />
+        </RadioGroup>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/video_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/player_radio_group"/>
+
+    </RelativeLayout>
+
+    <com.zealens.face.video.player.VideoPlayer
+        android:id="@+id/player"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="380dp"
+        android:layout_marginEnd="70dp"
+        android:layout_marginStart="895dp"
+        android:layout_marginTop="160dp"
+        />
+
+    <RelativeLayout
+        android:id="@+id/score_board"
+        android:layout_width="match_parent"
+        android:layout_height="260dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/dp100"
+        android:layout_marginEnd="@dimen/dp65"
+        android:layout_marginStart="@dimen/dp47"
+        android:layout_marginTop="@dimen/dp22"
+        android:layout_toEndOf="@id/content_panel">
+
+        <com.zealens.face.view.ScoreBoardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>

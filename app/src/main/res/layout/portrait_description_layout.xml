@@ -1,0 +1,35 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/description_container"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:paddingBottom="@dimen/dp5"
+    android:paddingTop="@dimen/dp5"
+    >
+
+    <com.zealens.face.view.FontTextView
+        android:id="@+id/nick_name"
+        style="@style/BaseText.Format.NoPadding.Size30"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="@string/log_in"
+        tools:textColor="@color/colorPrimary"
+        />
+
+    <com.zealens.face.view.FontTextView
+        android:id="@+id/status"
+        style="@style/BaseText.Format.NoPadding"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/nick_name"
+        android:layout_marginTop="@dimen/dp16"
+        android:text="@string/doubleText"
+        android:textColor="@color/color97FF28"
+        android:textSize="@dimen/sp15"
+        android:visibility="gone"
+        tools:visibility="visible"
+        />
+
+</RelativeLayout>

@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="VideoPlayer">
+
+        <attr name="evp_source" format="string"/>
+
+        <attr name="evp_leftAction" format="enum">
+            <enum name="none" value="0"/>
+            <enum name="restart" value="1"/>
+            <enum name="retry" value="2"/>
+        </attr>
+
+        <attr name="evp_rightAction" format="enum">
+            <enum name="none" value="3"/>
+            <enum name="submit" value="4"/>
+            <enum name="customLabel" value="5"/>
+        </attr>
+
+        <attr name="evp_customLabelText" format="string"/>
+        <attr name="evp_retryText" format="string"/>
+        <attr name="evp_submitText" format="string"/>
+        <attr name="evp_bottomText" format="string"/>
+
+        <attr name="evp_restartDrawable" format="reference"/>
+        <attr name="evp_playDrawable" format="reference"/>
+        <attr name="evp_pauseDrawable" format="reference"/>
+
+        <attr name="evp_hideControlsOnPlay" format="boolean"/>
+        <attr name="evp_autoPlay" format="boolean"/>
+
+        <attr name="evp_disableControls" format="boolean"/>
+
+        <attr name="evp_themeColor" format="color"/>
+
+        <attr name="evp_autoFullscreen" format="boolean"/>
+
+        <attr name="evp_loop" format="boolean"/>
+
+    </declare-styleable>
+
+
+    <declare-styleable name="MaterialProgressBar">
+        <!-- Style of progress drawable: horizontal or circular. Defaults to circular. -->
+        <attr name="mpb_progressStyle" format="enum">
+            <enum name="circular" value="0"/>
+            <enum name="horizontal" value="1"/>
+        </attr>
+        <!--
+          ~ Whether both determinate and indeterminate drawables should be set on this progress bar.
+          ~ Determinate ring progress drawable is not supported yet. Defaults to false.
+          -->
+        <attr name="mpb_setBothDrawables" format="boolean"/>
+        <!-- Whether progress drawable should use its intrinsic padding. Defaults to true. -->
+        <attr name="mpb_useIntrinsicPadding" format="boolean"/>
+        <!--
+          ~ Whether progress drawable should show a background. Defaults to true for horizontal
+          ~ progress drawable, false otherwise.
+          -->
+        <attr name="mpb_showProgressBackground" format="boolean"/>
+        <attr name="mpb_progressTint" format="color|reference"/>
+        <attr name="mpb_progressTintMode" format="enum">
+            <enum name="src_over" value="3"/>
+            <enum name="src_in" value="5"/>
+            <enum name="src_atop" value="9"/>
+            <enum name="multiply" value="14"/>
+            <enum name="screen" value="15"/>
+            <enum name="add" value="16"/>
+        </attr>
+        <attr name="mpb_secondaryProgressTint" format="color|reference"/>
+        <attr name="mpb_secondaryProgressTintMode" format="enum">
+            <enum name="src_over" value="3"/>
+            <enum name="src_in" value="5"/>
+            <enum name="src_atop" value="9"/>
+            <enum name="multiply" value="14"/>
+            <enum name="screen" value="15"/>
+            <enum name="add" value="16"/>
+        </attr>
+        <attr name="mpb_progressBackgroundTint" format="color|reference"/>
+        <attr name="mpb_progressBackgroundTintMode" format="enum">
+            <enum name="src_over" value="3"/>
+            <enum name="src_in" value="5"/>
+            <enum name="src_atop" value="9"/>
+            <enum name="multiply" value="14"/>
+            <enum name="screen" value="15"/>
+            <enum name="add" value="16"/>
+        </attr>
+        <attr name="mpb_indeterminateTint" format="color|reference"/>
+        <attr name="mpb_indeterminateTintMode" format="enum">
+            <enum name="src_over" value="3"/>
+            <enum name="src_in" value="5"/>
+            <enum name="src_atop" value="9"/>
+            <enum name="multiply" value="14"/>
+            <enum name="screen" value="15"/>
+            <enum name="add" value="16"/>
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="FontTextView">
+        <attr name="font_type" format="enum">
+            <enum name="msyh" value="0"/>
+            <enum name="unidream_led" value="1"/>
+            <enum name="helvetica" value="2"/>
+            <enum name="bank" value="3"/>
+            <enum name="ping_fang" value="4"/>
+        </attr>
+    </declare-styleable>
+    <declare-styleable name="CornerDispatchView">
+        <attr name="corner_ignore" format="enum">
+            <enum name="left" value="0"/>
+            <enum name="right" value="1"/>
+            <enum name="both" value="2"/>
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="PortraitView">
+        <attr name="description_direction" format="enum">
+            <enum name="left" value="0"/>
+            <enum name="top" value="1"/>
+            <enum name="right" value="2"/>
+            <enum name="bottom" value="3"/>
+        </attr>
+
+        <attr name="exchange_icon_on" format="boolean"/>
+    </declare-styleable>
+
+    <declare-styleable name="ColorfulCheckBox">
+        <attr name="enabled_text_color" format="color"/>
+        <attr name="disabled_text_color" format="color"/>
+        <attr name="checked_text_color" format="color"/>
+        <attr name="unchecked_text_color" format="color"/>
+    </declare-styleable>
+
+    <declare-styleable name="ResourcefulRadioButton">
+        <attr name="background_pic_resource" format="reference"/>
+    </declare-styleable>
+    <declare-styleable name="ImageDebug">
+        <attr name="show" format="boolean"/>
+    </declare-styleable>
+
+    <declare-styleable name="ScoreBoardView">
+        <attr name="mode" format="enum">
+            <enum name="with_portrait" value="0"/>
+            <enum name="without_portrait" value="1"/>
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="BallCastPointAnalyzeView">
+        <attr name="cast_type" format="enum">
+            <enum name="with_ruler" value="0"/>
+            <enum name="without_ruler" value="1"/>
+        </attr>
+    </declare-styleable>
+</resources>

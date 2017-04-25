@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--value-->
+    <integer name="analyze_indicator_count">8</integer>
+    <integer name="analyze_indicator_training_count">5</integer>
+    <integer name="weight_item_start_text">19</integer>
+    <integer name="weight_item_center_text">62</integer>
+    <integer name="weight_item_end_text">19</integer>
+
+    <!--color-->
+
+    <!--dimen-->
+    <dimen name="player_portraits_gap">@dimen/sp60</dimen>
+    <dimen name="player_portrait_margin_score">@dimen/dp170</dimen>
+    <dimen name="indicator_item_margin">@dimen/dp20</dimen>
+
+</resources>

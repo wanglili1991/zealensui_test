@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--value-->
+
+    <!--string-->
+    <string name="startButtonText">@string/start</string>
+
+    <!--colors-->
+    <color name="colorPrimary">@color/color3F51B5</color>
+    <color name="colorPrimaryDark">@color/color303F9F</color>
+    <color name="colorAccent">@color/colorFF4081</color>
+    <color name="colorLoginBg">@color/color333333</color>
+
+    <color name="colorWhite">@android:color/white</color>
+    <color name="colorBlack">@android:color/black</color>
+    <color name="colorTransparent">@android:color/transparent</color>
+    <color name="colorItemSelected">@color/colorWhite</color>
+    <color name="colorItemUnselected">@color/color80FFFFFF</color>
+    <color name="colorChangePlayerDivider">@color/color457AE4</color>
+    <color name="colorVideoPanelDivider">@color/color3162BA</color>
+
+    <!--dimen-->
+    <dimen name="indicator_padding">@dimen/dp6</dimen>
+    <dimen name="indicator_layout_height">@dimen/dp20</dimen>
+    <dimen name="portrait_size">@dimen/dp140</dimen>
+    <dimen name="service_chooser_size">@dimen/dp40</dimen>
+    <dimen name="head_account_layer_height">@dimen/dp120</dimen>
+    <dimen name="service_chooser_margin_top">@dimen/dp40</dimen>
+    <dimen name="control_button_margin_bottom">@dimen/dp40</dimen>
+    <dimen name="control_button_text_size">@dimen/sp30</dimen>
+
+    <!--drawable-->
+    <drawable name="drawableGeneralBackground">@drawable/bg_general</drawable>
+</resources>

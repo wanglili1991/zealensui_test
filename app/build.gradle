@@ -1,0 +1,117 @@
+apply plugin: 'com.android.application'
+apply plugin: 'me.tatarka.retrolambda'
+
+android {
+    def globalConfig = rootProject.extensions.getByName("ext")
+
+    compileSdkVersion globalConfig["androidCompileSdkVersion"]
+    buildToolsVersion globalConfig["androidBuildToolsVersion"]
+
+    defaultConfig {
+    }
+
+    signingConfigs {
+        config {
+            keyAlias 'Zealens'
+            keyPassword 'Zealens@2016'
+            storeFile file('../zealens.jks')
+            storePassword 'Zealens@2016'
+        }
+    }
+
+    defaultConfig {
+        minSdkVersion globalConfig["androidMinSdkVersion"]
+        targetSdkVersion globalConfig["androidTargetSdkVersion"]
+
+        applicationId globalConfig["androidApplicationId"]
+        testApplicationId globalConfig["testApplicationId"]
+        testInstrumentationRunner globalConfig["testInstrumentationRunner"]
+        versionCode Integer.parseInt(VERSION_CODE)
+        versionName VERSION_NAME
+        buildConfigField "boolean", "PUBLISH_FLAG", PUBLISH_FLAG
+        vectorDrawables.useSupportLibrary = true
+        externalNativeBuild {
+            cmake {
+                // cFlags "D_DEFINE1", "-D_DEFINE2"
+                cppFlags "-std=c++11 -frtti -fexceptions"
+            }
+        }
+
+        ndk {
+            abiFilters /*'armeabi', 'armeabi-v7a','arm64-v8a' //,*/'x86_64'
+        }
+    }
+
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+
+    buildTypes {
+        release {
+            shrinkResources false
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.config
+        }
+        debug {
+            jniDebuggable true
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    applicationVariants.all { variant ->
+        variant.outputs.each { output ->
+            def outputFile = output.outputFile
+            def fileName = "${defaultConfig.applicationId}_${buildType.name}_V${defaultConfig.versionName}_${buildTime()}.apk"
+            output.outputFile = new File(outputFile.parent, fileName)
+        }
+    }
+
+    lintOptions {
+        abortOnError false
+        disable 'MissingTranslation'
+    }
+
+    externalNativeBuild {
+        cmake {
+            path "CMakeLists.txt"
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    def moduleDependencies = rootProject.ext.appDependencies
+    def moduleTestDependencies = rootProject.ext.appTestDependencies
+    def developmentDependencies = rootProject.ext.developmentDependencies
+
+    androidTestCompile(moduleDependencies.espresssoCore, {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+
+    compile project(':domain')
+    compile project(':common')
+
+    compile(name: 'acra_debug', ext: 'aar')
+
+    compile moduleDependencies.appCompat
+    compile moduleDependencies.constraintLayout
+    compile moduleDependencies.designCompat
+    compile moduleDependencies.materialDesignCore
+
+    testCompile moduleTestDependencies.jUnit
+    testCompile developmentDependencies.leakCanary
+    testCompile moduleTestDependencies.mockito
+    androidTestCompile moduleTestDependencies.mockitoAndroid
+}
+
+/// Build Function
+def buildTime() {
+    return new java.text.SimpleDateFormat("yyyyMMdd").format(new Date()).toString();
+}

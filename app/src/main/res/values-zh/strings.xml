@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">智能网球</string>
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="once_more">再战一盘</string>
+    <string name="video_replay">本盘视频</string>
+    <string name="analyze">技术分析</string>
+    <string name="analyze_glance">技术分析</string>
+    <string name="start">开始</string>
+    <string name="exit">退出</string>
+    <string name="log_out">退出全部账号</string>
+    <string name="log_in">登陆</string>
+    <string name="single">单打比赛</string>
+    <string name="doubleText">双打比赛</string>
+    <string name="train">个人训练</string>
+    <string name="easy">易</string>
+    <string name="middle">中</string>
+    <string name="hard">难</string>
+    <string name="end_game">结束比赛</string>
+    <string name="go_back">返回</string>
+    <string name="slower">慢速</string>
+    <string name="normal">正常</string>
+    <string name="full_screen">全屏</string>
+    <string name="we_chat_login">微信登录</string>
+    <string name="close">关闭</string>
+    <string name="confirm_to_log_out_all_accounts">确定退出全部账号？</string>
+    <string name="no">不</string>
+    <string name="continue_choose">继续</string>
+
+    <string-array name="GameMode">
+        <item name="tiebreak">抢七</item>
+        <item name="sixTiebreak">六局抢七</item>
+        <item name="fourTiebreak">四局抢七</item>
+    </string-array>
+
+    <string-array name="TrainModeChoose">
+        <item name="service">发球</item>
+        <item name="alternateService">接发球</item>
+        <item name="forehand">正手击球</item>
+        <item name="forehandDownTheLine">正手直线</item>
+        <item name="forehandCrossCourt">正手斜线</item>
+        <item name="backhand">反手击球</item>
+        <item name="backhandDownTheLine">反手直线</item>
+        <item name="backhandCrossCourt">反手斜线</item>
+        <item name="volley">截击</item>
+        <item name="freeStyle">随意打</item>
+        <item name="multipleBalls">多球</item>
+    </string-array>
+    <string name="break_mode_four_minutes">4分钟一组</string>
+    <string name="break_mode_20_hits">20拍一组</string>
+    <string name="break_mode_free_style">自由练</string>
+    <string name="succeed_times">成功次数</string>
+    <string name="average_speed">平均球速</string>
+    <string name="success_rate">成功率</string>
+    <string name="last_score_incorrect">上一分不对</string>
+    <string name="last_score_incorrect_with_quote">上一分不对 ?</string>
+    <string name="training">训练中</string>
+    <string name="end_training">结束训练</string>
+    <string name="matching">比赛进行中</string>
+    <string name="end_matching">结束比赛</string>
+    <string name="qrcode_scan_hint">微信扫一扫\n 获取打球记录</string>
+    <string name="player">球手</string>
+    <string name="analyze_title">技术分析</string>
+
+    <string-array name="AnalyzeIndicators">
+        <item name="aces">Aces</item>
+        <item name="double_faults">双误</item>
+        <item name="first_server_in">1发得分</item>
+        <item name="first_server_won">1发胜率</item>
+        <item name="second_server_won">2发胜率</item>
+        <item name="break_point_won">截击胜率</item>
+        <item name="net_points_won">网</item>
+        <item name="winner">胜者</item>
+    </string-array>
+    <string-array name="AnalyzeIndicatorsTraining">
+        <item name="success_times">成功次数</item>
+        <item name="total_times">总次数</item>
+        <item name="success_ratio">有效率</item>
+        <item name="max_speed">最高速度</item>
+        <item name="average_speed">平均速度</item>
+    </string-array>
+    <string name="evp_retry">重试</string>
+    <string name="evp_submit">确认</string>
+    <string name="exit_full_screen">@string/exit</string>
+    <string name="file_no_exist">文件不存在</string>
+    <string name="first_serve">1发得分</string>
+    <string name="second_serve">2发</string>
+    <string name="aces">Aces</string>
+    <string name="startButtonText">@string/start</string>
+    <string name="continue_matching">继续比赛</string>
+    <string name="continue_train">继续训练</string>
+    <string name="end_matching_confirm_hint">比赛还没结束，真的要中途退赛吗？</string>
+    <string name="end_train_confirm_hint">训练还没结束，真的要中途退出吗？</string>
+    <string name="replay_video">回放视频</string>
+    <string name="replay_side_a">A方视角</string>
+    <string name="replay_side_b">B方视角</string>
+    <string name="correct_score">取消得分重打</string>
+    <string name="competitor_won_the_score">对方得分</string>
+    <string name="network_down_hint">无网络，请联系工作人员</string>
+    <string name="already_login">此账号已登陆</string>
+    <string name="special_video_divider_text">精彩视频</string>
+    <string name="training_video">训练视频</string>
+    <string name="training_video_inspect_a">训练视频 A</string>
+    <string name="training_video_inspect_b">训练视频 B</string>
+    <string name="match_video_name">第%d分</string>
+
+    <string-array name="TrainModeLevel">
+        <item name="easy">@string/easy</item>
+        <item name="middle">@string/middle</item>
+        <item name="hard">@string/hard</item>
+    </string-array>
+    <string-array name="TrainModeLevelForService">
+        <item name="easy">不限</item>
+        <item name="middle">内</item>
+        <item name="hard">外</item>
+    </string-array>
+    <string name="match_video_name_game">第%d局</string>
+    <string name="special_video_title_ace">Ace球</string>
+    <string name="special_video_title_winner">制胜分</string>
+    <string name="special_video_title_20_hits">长回合（>=20击）</string>
+</resources>

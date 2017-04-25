@@ -1,0 +1,90 @@
+allprojects {
+    repositories {
+        jcenter()
+    }
+}
+
+ext {
+    //Android
+    androidBuildToolsVersion = "25.0.2"
+    androidMinSdkVersion = 21
+    androidTargetSdkVersion = 25
+    androidCompileSdkVersion = 25
+
+    //Libraries
+    espresssoCoreVersion = "2.2.2"
+    appCompatVersion = "25.2.0"
+    constraintLayoutVersion = "1.0.0-beta4"
+    okHttpVersion = "3.6.0"
+    gsonVersion = '2.4'
+    materialDesignCoreVersion = '0.9.1.0'
+    intellijAnnotations = '12.0'
+    commonIO = '2.5'
+
+    //Testing
+    jUnitVersion = '4.12'
+    okHttpTestMockVersion = okHttpVersion
+    mockitoVersion = '2.7.20'
+    mockitoAndroidVersion = mockitoVersion
+
+    //Development
+    leakCanaryVersion = '1.3.1'
+
+    developmentDependencies = [
+            leakCanary: "com.squareup.leakcanary:leakcanary-android:${leakCanaryVersion}",
+    ]
+
+    testDependencies = [
+            jUnit         : "junit:junit:${jUnitVersion}",
+            okHttpTest    : "com.squareup.okhttp3:mockwebserver:${okHttpTestMockVersion}",
+            mockito       : "org.mockito:mockito-core:${mockitoVersion}",
+            mockitoAndroid: "org.mockito:mockito-android:${mockitoVersion}",
+    ]
+
+    androidDependecies = [
+            constraintLayout: "com.android.support.constraint:constraint-layout:${constraintLayoutVersion}"
+    ]
+
+    appDependencies = [
+            espresssoCore     : "com.android.support.test.espresso:espresso-core:${espresssoCoreVersion}",
+            appCompat         : "com.android.support:appcompat-v7:${appCompatVersion}",
+            constraintLayout  : androidDependecies.constraintLayout,
+            designCompat      : "com.android.support:design:${appCompatVersion}",
+            materialDesignCore: "com.afollestad.material-dialogs:core:${materialDesignCoreVersion}",
+    ]
+
+    appTestDependencies = [
+            jUnit         : testDependencies.jUnit,
+            mockito       : testDependencies.mockito,
+            mockitoAndroid: testDependencies.mockitoAndroid,
+    ]
+
+    domainDependencies = [
+    ]
+
+    domainTestDependencies = [
+            mockito: testDependencies.mockito,
+    ]
+
+    dataDependencies = [
+    ]
+
+    dataTestDependencies = [
+            mockito: testDependencies.mockito,
+    ]
+
+    commonDependencies = [
+            okHttp             : "com.squareup.okhttp3:okhttp:${okHttpVersion}",
+            gson               : "com.google.code.gson:gson:${gsonVersion}",
+            jUnit              : testDependencies.jUnit,
+            intellijAnnotations: "com.intellij:annotations:${intellijAnnotations}",
+            commonIO           : "commons-io:commons-io:${commonIO}",
+    ]
+
+    commonTestDependencies = [
+            jUnit     : testDependencies.jUnit,
+            okHttpTest: testDependencies.okHttpTest,
+            mockito   : testDependencies.mockito,
+    ]
+
+}

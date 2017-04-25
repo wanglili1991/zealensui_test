@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/Disabled"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/video_panel_item_height"
+    tools:background="@color/colorPrimary">
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="1px"
+        android:layout_height="1px"
+        android:layout_marginTop="@dimen/dp26"
+        />
+
+    <RelativeLayout
+        style="@style/Disabled"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/divider"
+        android:background="@color/colorBlack">
+
+        <ImageView
+            style="@style/Disabled"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:src="@drawable/video_panel_green_bandage"
+            />
+
+        <com.zealens.face.view.FontTextView
+            android:id="@+id/divider_tag_text"
+            style="@style/BaseText.Format.NoPadding.Size30"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/dp30"
+            android:clickable="false"
+            android:enabled="false"
+            android:textColor="@color/color80E5E5E5"
+            android:textSize="@dimen/sp24"
+            android:textStyle="bold"
+            tools:text="精彩视频"
+            />
+
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--value-->
+    <item name="targetSlowerSpeed" type="dimen" format="float">0.5</item>
+
+    <!--string-->
+    <string name="evp_submit">SUBMIT</string>
+    <string name="evp_retry">RETRY</string>
+    <string name="file_no_exist">File No Exist</string>
+    <string name="exit_full_screen">\@sting/exit</string>
+
+    <!--color-->
+    <color name="colorProgressBg">@android:color/black</color>
+    <color name="colorProgressPassed">@color/color01ABFF</color>
+    <color name="colorControlPanelBg">@color/colorE6111A33</color>
+    <color name="colorPausedCover">@color/color80000000</color>
+    <color name="color80000000">#80000000</color>
+
+    <!--dimen-->
+    <dimen name="evp_content_inset">24dp</dimen>
+    <dimen name="evp_content_inset_half">12dp</dimen>
+    <dimen name="evp_content_inset_less">10dp</dimen>
+    <dimen name="evp_content_inset_iconbuttons">6dp</dimen>
+    <dimen name="evp_progress_height">@dimen/dp20</dimen>
+
+    <dimen name="evp_text_size_small">14sp</dimen>
+
+    <dimen name="evp_button_size">56dp</dimen>
+    <dimen name="evp_text_size_medium">17sp</dimen>
+
+    <dimen name="evp_negative_inset_large">-8dp</dimen>
+    <dimen name="evp_negative_inset_small">-2dp</dimen>
+
+    <dimen name="video_panel_container_width">780dp</dimen>
+    <dimen name="video_panel_item_width">@dimen/video_panel_container_width</dimen>
+    <dimen name="video_panel_item_height">@dimen/dp72</dimen>
+
+</resources>

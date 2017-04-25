@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/parent"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/head_account_layer_height"
+    android:paddingEnd="@dimen/dp30"
+    android:paddingStart="@dimen/dp30"
+    tools:background="@color/colorPrimary"
+    >
+
+    <com.zealens.face.view.FontTextView
+        android:id="@+id/start_tag"
+        style="@style/BaseText.Format.NoPadding"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_gravity="top|start"
+        android:layout_marginEnd="@dimen/dp32"
+        android:layout_marginStart="@dimen/dp30"
+        android:textSize="@dimen/sp26"
+        android:textStyle="bold"
+        tools:text="@string/log_in"
+        />
+
+    <com.zealens.face.view.FontTextView
+        android:id="@+id/timer_text"
+        style="@style/BaseText.Format.NoPadding"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toEndOf="@id/start_tag"
+        android:textColor="@color/color999999"
+        android:textSize="@dimen/sp38"
+        app:font_type="unidream_led"
+        tools:text="00:35:58"/>
+
+    <com.zealens.face.view.FontTextView
+        android:id="@+id/action_button"
+        style="@style/BaseText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:background="@drawable/btn_gray"
+        android:textSize="@dimen/sp26"
+        tools:text="@string/log_out"
+        />
+</RelativeLayout>

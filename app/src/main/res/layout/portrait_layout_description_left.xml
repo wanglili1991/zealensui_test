@@ -1,0 +1,24 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/player_container"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="top|center_horizontal"
+    >
+
+    <include
+        android:id="@+id/portrait_container_included"
+        layout="@layout/portrait_container_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/description_layout_included"
+        android:layout_marginStart="@dimen/dp10"/>
+
+    <include
+        android:id="@+id/description_layout_included"
+        android:layout_width="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_height="wrap_content"
+        layout="@layout/portrait_description_layout"/>
+</RelativeLayout>

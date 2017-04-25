@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/analyze_item_bg"
+    >
+
+    <com.zealens.face.view.FontTextView
+        android:id="@+id/indicator_start_text"
+        style="@style/BaseText.Format.NoPadding.Size30"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="@integer/weight_item_start_text"
+        android:text="@string/zero"
+        />
+
+    <com.zealens.face.view.FontTextView
+        android:id="@+id/indicator_center_text"
+        style="@style/BaseText.Format.NoPadding.Size30"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="@integer/weight_item_center_text"
+        android:textColor="@color/color4978D2"
+        tools:text="aces"/>
+
+    <com.zealens.face.view.FontTextView
+        android:id="@+id/indicator_end_text"
+        style="@style/BaseText.Format.NoPadding.Size30"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="@integer/weight_item_start_text"
+        android:text="@string/zero"
+        />
+
+</LinearLayout>

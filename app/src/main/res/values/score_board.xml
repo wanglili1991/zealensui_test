@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--value-->
+    <integer name="sb_weight_sum_without_portrait">100</integer>
+    <integer name="sb_weight_status">35</integer>
+    <integer name="sb_weight_score">30</integer>
+    <integer name="sb_weight_speed">35</integer>
+    <integer name="sb_weight_portrait_zero">0</integer>
+    <integer name="sb_weight_sum_with_portrait">135</integer>
+    <integer name="sb_weight_portrait">35</integer>
+
+    <!--color-->
+
+    <!--dimen-->
+
+</resources>

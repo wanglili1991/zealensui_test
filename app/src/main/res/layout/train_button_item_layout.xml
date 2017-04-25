@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zealens.face.view.ColorfulCheckBox
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mode"
+    android:layout_width="@dimen/train_mode_choose_panel_item_size"
+    android:layout_height="@dimen/train_mode_choose_panel_item_size"
+    android:layout_centerInParent="true"
+    android:layout_gravity="center"
+    android:background="@drawable/train_button_effect_service"
+    android:button="@null"
+    android:checked="false"
+    android:clickable="true"
+    android:gravity="bottom|center_horizontal"
+    android:paddingBottom="@dimen/dp10"
+    android:textColor="@drawable/btn_text_color_white_blue_selector"
+    android:textSize="@dimen/train_mode_button_text_size"
+    android:layout_marginStart="@dimen/train_mode_choose_panel_item_margin"
+    android:layout_marginBottom="@dimen/train_mode_choose_panel_item_margin"
+    tools:text="test"
+    />

@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_general"
+    tools:context="com.zealens.face.activity.common.SkillAnalyzeActivity">
+
+    <com.zealens.face.view.FontTextView
+        style="@style/BaseText.Format.NoPadding.Size30"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp50"
+        android:text="@string/analyze_title"
+        />
+
+    <com.zealens.face.view.FontTextView
+        android:id="@+id/information"
+        style="@style/BaseText.Format.NoPadding.Size30"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="@dimen/dp50"
+        android:text="@string/player"
+        />
+
+    <View
+        android:id="@id/center_dock"
+        style="@style/CenterDot"
+        />
+
+    <View
+        android:id="@+id/base_line"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginTop="@dimen/dp120"/>
+
+    <RadioGroup
+        android:id="@+id/player_radio_group"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dp200"
+        android:layout_below="@id/base_line"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/player_one"
+            style="@style/BaseText.Format"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|top|start|center_horizontal"
+            android:layout_marginBottom="@dimen/dp40"
+            android:layout_marginTop="@dimen/dp30"
+            android:layout_weight="1"
+            android:background="@drawable/button_effect_edge_white_left_corner"
+            android:button="@null"
+            android:checked="true"
+            android:clickable="true"
+            android:gravity="top|center_horizontal"
+            android:padding="@dimen/dp36"
+            android:text="@string/player"
+            android:textColor="@drawable/btn_text_color_white_blue_selector"
+            android:textSize="@dimen/control_button_text_size"
+            android:textStyle="bold"
+            />
+
+        <RadioButton
+            android:id="@+id/player_two"
+            style="@style/BaseText.Format"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dp40"
+            android:layout_marginTop="@dimen/dp30"
+            android:layout_weight="1"
+            android:background="@drawable/button_effect_edge_white_right_corner"
+            android:button="@null"
+            android:checked="false"
+            android:clickable="true"
+            android:gravity="top|center_horizontal"
+            android:padding="@dimen/dp36"
+            android:paddingBottom="@dimen/dp10"
+            android:text="@string/player"
+            android:textColor="@drawable/btn_text_color_white_blue_selector"
+            android:textSize="@dimen/control_button_text_size"
+            android:textStyle="bold"
+            />
+    </RadioGroup>
+
+    <com.zealens.face.view.BallCastPointAnalyzeView
+        android:id="@+id/cast_scene_with_ruler"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/player_radio_group"
+        android:layout_marginEnd="@dimen/dp130"
+        android:layout_toStartOf="@id/center_dock"
+        app:cast_type="with_ruler"
+        />
+
+    <com.zealens.face.view.BallCastPointAnalyzeView
+        android:id="@+id/cast_scene_without_ruler"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/player_radio_group"
+        android:layout_marginStart="@dimen/dp130"
+        android:layout_toEndOf="@id/center_dock"
+        app:cast_type="without_ruler"
+        />
+
+    <LinearLayout
+        android:id="@+id/receive_points_illustrate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="@dimen/dp60"
+        android:layout_toEndOf="@id/cast_scene_without_ruler"
+        android:orientation="vertical"
+        >
+
+        <com.zealens.face.view.FontTextView
+            style="@style/BaseText.Format.NoPadding.Size30"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawablePadding="@dimen/dp20"
+            android:drawableStart="@drawable/analyze_ball_dot_yellow"
+            android:text="@string/aces"
+            />
+
+        <com.zealens.face.view.FontTextView
+            style="@style/BaseText.Format.NoPadding.Size30"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dp20"
+            android:layout_marginTop="@dimen/dp20"
+            android:drawablePadding="@dimen/dp20"
+            android:drawableStart="@drawable/analyze_ball_dot_orange"
+            android:text="@string/first_serve"
+            />
+
+        <com.zealens.face.view.FontTextView
+            style="@style/BaseText.Format.NoPadding.Size30"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawablePadding="@dimen/dp20"
+            android:drawableStart="@drawable/analyze_ball_dot_blue"
+            android:text="@string/second_serve"
+            />
+
+    </LinearLayout>
+
+</RelativeLayout>

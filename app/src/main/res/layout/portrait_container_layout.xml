@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/portrait_container"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <com.zealens.face.view.RoundImageView
+        android:id="@+id/portrait"
+        android:layout_width="@dimen/portrait_size"
+        android:layout_height="@dimen/portrait_size"
+        android:background="@drawable/button_effect_add_player"
+        />
+
+    <View
+        android:id="@+id/exchange_player"
+        style="@style/EnabledView"
+        android:layout_width="@dimen/dp36"
+        android:layout_height="@dimen/dp36"
+        android:layout_gravity="bottom|end"
+        android:layout_marginEnd="@dimen/dp8"
+        android:background="@drawable/button_effect_exchange_player"
+        android:visibility="invisible"
+        tools:visibility="visible"
+        />
+</FrameLayout>

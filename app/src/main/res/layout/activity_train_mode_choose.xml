@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/drawableGeneralBackground"
+    tools:context="com.zealens.face.activity.train.TrainModeChooseActivity">
+
+    <View
+        android:id="@+id/center_dock"
+        style="@style/CenterDot"
+        />
+
+    <View
+        android:id="@+id/side_sign_a"
+        android:layout_width="@dimen/playground_side_sign_size"
+        android:layout_height="@dimen/playground_side_sign_size"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/dp200"
+        android:layout_marginEnd="@dimen/playground_side_sign_margin_center"
+        android:layout_toStartOf="@+id/center_dock"
+        android:background="@drawable/playground_side_a"/>
+
+    <View
+        android:id="@+id/side_sign_b"
+        android:layout_width="@dimen/playground_side_sign_size"
+        android:layout_height="@dimen/playground_side_sign_size"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/dp200"
+        android:layout_marginStart="@dimen/playground_side_sign_margin_center"
+        android:layout_toEndOf="@+id/center_dock"
+        android:background="@drawable/playground_side_b"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/train_mode_choose_panel_size_a"
+        android:layout_width="wrap_content"
+        android:layout_height="650dp"
+        android:layout_above="@+id/side_sign_a"
+        android:layout_marginBottom="@dimen/train_mode_choose_panel_bottom_margin"
+        android:layout_marginEnd="@dimen/train_mode_choose_panel_gap_margin"
+        android:layout_marginStart="@dimen/train_mode_choose_panel_bound_margin"
+        android:layout_toStartOf="@+id/center_dock"
+        tools:background="@color/colorWhite"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/train_mode_choose_panel_size_b"
+        android:layout_width="wrap_content"
+        android:layout_height="650dp"
+        android:layout_above="@+id/side_sign_b"
+        android:layout_marginBottom="@dimen/train_mode_choose_panel_bottom_margin"
+        android:layout_marginEnd="@dimen/train_mode_choose_panel_bound_margin"
+        android:layout_marginStart="@dimen/train_mode_choose_panel_gap_margin"
+        android:layout_toEndOf="@+id/center_dock"
+        tools:background="@color/colorWhite"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/train_mode_choose_panel_size_a"
+        android:layout_marginBottom="@dimen/dp26"
+        >
+
+        <View
+            android:id="@+id/exchange_playground"
+            style="@style/EnabledView"
+            android:layout_width="@dimen/dp40"
+            android:layout_height="@dimen/dp40"
+            android:layout_centerInParent="true"
+            android:background="@drawable/button_effect_exchange_playground"
+            />
+
+        <com.zealens.face.view.PortraitView
+            android:id="@+id/player_side_a_one"
+            android:layout_width="@dimen/dp300"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/dp450"
+            android:layout_toStartOf="@+id/exchange_playground"
+            app:description_direction="right"
+            />
+
+        <com.zealens.face.view.PortraitView
+            android:id="@+id/player_side_b_one"
+            android:layout_width="@dimen/dp300"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp450"
+            android:layout_toEndOf="@+id/exchange_playground"
+            app:description_direction="left"
+            />
+
+    </RelativeLayout>
+
+</RelativeLayout>

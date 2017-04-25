@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_centerInParent="true"
+    android:layout_gravity="center"
+    android:id="@+id/parent"
+    android:background="@drawable/score_board_general_bg"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:weightSum="@integer/sb_weight_sum_with_portrait">
+
+    <FrameLayout
+        android:id="@+id/portrait_container"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="@integer/sb_weight_portrait">
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+
+            <com.zealens.face.view.PortraitView
+                android:id="@+id/portrait_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:description_direction="bottom"
+                />
+        </FrameLayout>
+    </FrameLayout>
+
+    <ImageView
+        android:id="@+id/status_container"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="@integer/sb_weight_status"
+        android:src="@drawable/score_board_state_out"
+        />
+
+    <FrameLayout
+        android:id="@+id/success_time_container"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="@integer/sb_weight_score"
+        android:background="@color/color1E2029">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+
+            <com.zealens.face.view.FontTextView
+                android:id="@+id/success_time"
+                style="@style/BaseText.Format.NoPadding.Size30"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="@dimen/dp13"
+                android:textSize="128sp"
+                app:font_type="helvetica"
+                tools:text="88"
+                />
+
+            <com.zealens.face.view.FontTextView
+                style="@style/BaseText.Format.NoPadding"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/success_time"
+                android:layout_centerHorizontal="true"
+                android:text="@string/succeed_times"
+                android:textColor="@color/color99FFFFFF"
+                />
+        </RelativeLayout>
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/speed_container"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="@integer/sb_weight_speed">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+
+            <com.zealens.face.view.FontTextView
+                android:id="@+id/speed_real_time"
+                style="@style/BaseText.Format.NoPadding.Size30"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginBottom="@dimen/dp13"
+                android:textColor="@color/color97FF28"
+                android:textSize="128sp"
+                app:font_type="unidream_led"
+                tools:text="168"
+                />
+
+            <com.zealens.face.view.FontTextView
+                style="@style/BaseText.Format.NoPadding"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/speed_real_time"
+                android:layout_centerHorizontal="true"
+                android:text="@string/speed_unit"
+                android:textColor="@color/color97FF28"
+                app:font_type="unidream_led"
+                />
+        </RelativeLayout>
+    </FrameLayout>
+
+</LinearLayout>
